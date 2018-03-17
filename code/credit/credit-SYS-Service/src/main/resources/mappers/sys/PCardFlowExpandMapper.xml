@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.castiel.dao.sys.PCardFlowExpandMapper">
+	<!-- 查询最后更新日期 -->
+	<select id="storageTime" resultType="java.util.Date">
+		SELECT MAX(p.STORAGE_TIME)
+		stime FROM p_card_flow p
+	</select>
+
+	<!-- 查询活动周期内，统计信息 -->
+	<select id="round" resultType="com.castiel.model.sys.PCardFlowBean">
+		SELECT
+		p.STU_ID stuId,
+		p.DEPT_NAME
+		deptName,
+		COUNT(p.STU_ID) total
+		FROM
+		p_card_flow p
+		WHERE
+		p.ACT_TIME BETWEEN #{begin} and #{end} AND p.ISVALID=1
+		AND
+		p.CONTYPE = #{contype}
+		GROUP BY
+		p.STU_ID
+	</select>
+
+	<select id="countByActName" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM
+		p_card_flow
+		WHERE ACT_NAME = #{actName}
+	</select>
+	
+	<select id="qExiest" resultType="java.lang.Integer">
+		SELECT COUNT(1) 
+		FROM p_card_flow p 
+		WHERE p.STU_ID=#{stuId}  AND p.ACT_NAME=#{actName}
+	</select>
+
+	<select id="getIsvalidAndReason" resultType="com.castiel.model.sys.PCardFlowBean">
+		SELECT ISVALID as
+		isValid,INVALID_REASON as invalidReason
+		FROM
+		p_card_flow
+		WHERE ACT_NAME =
+		#{actName} AND STU_ID=#{stuId}
+	</select>
+</mapper>

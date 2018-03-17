@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>活动场次</title>
+		<link rel="stylesheet" href="css/weui.min.css">
+		<link rel="stylesheet" href="css/jquery-weui.min.css">
+		<link rel="stylesheet" href="css/demos.css" />
+	</head>
+
+	<body ontouchstart  style="background-color: #F3F3F3;">
+		<div class="weui-form-preview"  style="margin-top: 60px;">
+			<div class="weui-form-preview__bd" style="text-align: center;">
+				<div class="weui-cell">
+					<div class="weui-cell__bd" style="height: 35px;">
+						<p style="margin-top: 6px; margin-right: 2px;color: #000000;">学分周期:</p>
+						<input type="date" value="" id="startDate"> - <input type="date" value="" id="endDate">
+					</div>
+				</div>
+				<div class="weui-cells"  style="margin-top: 50px;">
+					<div class="weui-cell"  style="height: 30px;">
+						<div class="weui-cell__bd">
+							<p>参加讲座场次</p>
+						</div>
+						<div class="weui-cell__bd" id="total" style="margin-left: 75px;">0</div>
+					</div>
+					<div class="weui-cell" style="height: 30px;">
+						<div class="weui-cell__bd">
+							<p>申请认定学分</p>
+						</div>
+						<div class="weui-cell__bd" id="affirmScore" style="margin-left: 75px;">0</div>
+					</div>
+					<div class="weui-cell" style="height: 30px;">
+						<div class="weui-cell__bd">
+							<p>已获得学分</p>
+						</div>
+						<div class="weui-cell__bd" id="scoreValue" style="margin-left: 75px;">0</div>
+					</div>
+					<div class="weui-cell"  style="height: 30px;">
+						<div class="weui-cell__bd">
+							<p>参加演出场次</p>
+						</div>
+						<div class="weui-cell__bd" id="total2" style="margin-left: 75px;">0</div>
+					</div>
+					<div class="weui-cell" style="height: 30px;">
+						<div class="weui-cell__bd">
+							<p>申请认定学分</p>
+						</div>
+						<div class="weui-cell__bd" id="affirmScore2" style="margin-left: 75px;">0</div>
+					</div>
+					<div class="weui-cell" style="height: 30px;">
+						<div class="weui-cell__bd">
+							<p>已获得学分</p>
+						</div>
+						<div class="weui-cell__bd" id="scoreValue2" style="margin-left: 75px;">0</div>
+					</div>
+				</div>
+				<div class="weui-cell">
+					<button style="background-color:#1FA24A; color:#FFFFFF;margin-top: 15px; width: 260px;" type="submit" class="weui-btn weui-btn_primary" onclick="getData()">查询</button>
+				</div>
+				<div class="weui-cell" id="message">
+					<div id="message"></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../lib/jquery/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-weui.min.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+		<script type="text/javascript" src="js/share.js" ></script>
+		<script>
+			var stuid;
+			$(function() {
+				stuid = GetQueryString("id");
+				$.ajax({
+					type: "get",
+					url: "/student/actround/getTime",
+					async: true,
+					success: function(result) {
+						$("#startDate").val(result.data.start);
+						$("#endDate").val(result.data.end);
+						getData();
+					},
+				});
+
+			});
+
+			function getData() {
+				var startDate = $("#startDate").val();
+				var endDate = $("#endDate").val();
+				$.ajax({
+					type: "post",
+					url: "/student/actround",
+					data: {
+						id: stuid,
+						start: startDate,
+						end: endDate
+					},
+					async: true,
+					success: function(result) {
+						$("#total").text(result.data.total == null?0:result.data.total2);
+						$("#affirmScore").text(result.data.affirmScore == null?0:result.data.affirmScore);
+						$("#scoreValue").text(result.data.scoreValue == null?0:result.data.scoreValue);
+						$("#total2").text(result.data.total2 == null?0:result.data.total2);
+						$("#affirmScore2").text(result.data.affirmScore2 == null?0:result.data.affirmScore2);
+						$("#scoreValue2").text(result.data.scoreValue2 == null?0:result.data.scoreValue2 );
+						$("#message").html(result.data.message);
+					},
+				});
+			}
+
+			function GetQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+		</script>
+	</body>
+
+</html>

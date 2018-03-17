@@ -1,0 +1,143 @@
+<!-- toaster directive -->
+<toaster-container
+	toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+<!-- / toaster directive -->
+
+<!-- 导航条 -->
+<div class="bg-white bread-crumb">
+	<ul class="breadcrumb b-a m-b-n-xs lter b-b wrapper-md">
+		<li><a ui-sref="main"><i class="fa fa-home"></i> 首页</a>
+		</li>
+		<li><a ui-sref="main.sys.role.list">角色</a>
+		</li>
+		<li class="active" ng-bind="title"></li>
+	</ul>
+</div>
+
+<!-- 内容区域 -->
+<div class="wrapper-md content">
+	<div class="panel panel-default">
+		<!-- 头部 -->
+		<div class="panel-heading font-bold">
+			{{title}}<a
+				class="btn btn-sm btn-icon btn-rounded btn-default pull-right m-t-n-xs"
+				ui-sref="main.sys.role.list"><i
+				class="text-md fa fa-times text-muted"></i>
+			</a>
+		</div>
+		<!--表单-->
+		<div class="panel-body">
+			<form class="form-horizontal" name="user_form" id="role_form">
+				<!-- 数据表格 -->
+				<table class="table table-striped b-t b-light text-center">
+					<thead>
+						<tr>
+							<th style="text-align: left;">菜单</th>
+							<th>查看</th>
+							<th>增加</th>
+							<th>修改</th>
+							<th>删除</th>
+							<th>打开</th>
+							<th>关闭</th>
+							<th>执行</th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="(key,value) in record">
+							<td class="v-middle" style="text-align: left;" ng-if="value.indexOf('(submenu)')!=-1">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input class="menuCheckbox"  type="checkbox" value="{{value.split(':')[0]}}"
+								ng-if="value.split(':')[1].indexOf('null')!=-1"
+								/>
+								<input class="menuCheckbox"  type="checkbox" checked="checked" value="{{value.split(':')[0]}}"
+								ng-if="value.split(':')[1].indexOf('null')==-1"
+								/>
+								{{key}}
+							</td>
+							<td class="v-middle" style="text-align: left;" ng-if="value.indexOf('(submenu)')==-1">
+								<input class="menuCheckbox"  type="checkbox" value="{{value.split(':')[0]}}"
+								ng-if="value.split(':')[1].indexOf('null')!=-1"
+								/>
+								<input class="menuCheckbox"  type="checkbox" checked="checked" value="{{value.split(':')[0]}}"
+								ng-if="value.split(':')[1].indexOf('null')==-1"
+								/>
+								{{key}}
+							</td>
+							<!-- 查看 -->
+							<td class="v-middle" ng-if="value.indexOf('read')!=-1">
+								<input class="permissionCheckbox" value="read" type="checkbox" checked="checked"/>
+							</td>
+							<td class="v-middle" ng-if="value.indexOf('read')==-1">
+								<input class="permissionCheckbox" value="read" type="checkbox"/>
+							</td>
+							<!-- 添加 -->
+							<td class="v-middle" ng-if="value.indexOf('add')!=-1">
+								<input class="permissionCheckbox" value="add" type="checkbox" checked="checked"/>
+							</td>
+							<td class="v-middle" ng-if="value.indexOf('add')==-1">
+								<input class="permissionCheckbox" value="add" type="checkbox"/>
+							</td>
+							<!-- 修改 -->
+							<td class="v-middle" ng-if="value.indexOf('update')!=-1">
+								<input class="permissionCheckbox" value="update" type="checkbox" checked="checked"/>
+							</td>
+							<td class="v-middle" ng-if="value.indexOf('update')==-1">
+								<input class="permissionCheckbox" value="update" type="checkbox"/>
+							</td>
+							<!-- 删除 -->
+							<td class="v-middle" ng-if="value.indexOf('delete')!=-1">
+								<input class="permissionCheckbox" value="delete" type="checkbox" checked="checked"/>
+							</td>
+							<td class="v-middle" ng-if="value.indexOf('delete')==-1">
+								<input class="permissionCheckbox" value="delete" type="checkbox"/>
+							</td>
+							<!-- 打开权限 -->
+							<td class="v-middle" ng-if="value.indexOf('open')!=-1&&key.indexOf('调度管理')!=-1">
+								<input class="permissionCheckbox" value="open" type="checkbox" checked="checked"/>
+							</td>
+							<td class="v-middle" ng-if="value.indexOf('open')==-1&&key.indexOf('调度管理')!=-1">
+								<input class="permissionCheckbox" value="open" type="checkbox"/>
+							</td>
+							<td class="v-middle" ng-if="key.indexOf('调度管理')==-1">
+								<input class="permissionCheckbox" value="open" type="checkbox" disabled="disabled"/>
+							</td>
+							<!-- 关闭权限 -->
+							<td class="v-middle" ng-if="value.indexOf('close')!=-1&&key.indexOf('调度管理')!=-1">
+								<input class="permissionCheckbox" value="close" type="checkbox" checked="checked"/>
+							</td>
+							<td class="v-middle" ng-if="value.indexOf('close')==-1&&key.indexOf('调度管理')!=-1">
+								<input class="permissionCheckbox" value="close" type="checkbox"/>
+							</td>
+							<td class="v-middle" ng-if="key.indexOf('调度管理')==-1">
+								<input class="permissionCheckbox" value="close" type="checkbox" disabled="disabled"/>
+							</td>
+							<!-- 运行权限 -->
+							<td class="v-middle" ng-if="value.indexOf('run')!=-1&&key.indexOf('调度管理')!=-1">
+								<input class="permissionCheckbox" value="run" type="checkbox" checked="checked"/>
+							</td>
+							<td class="v-middle" ng-if="value.indexOf('run')==-1&&key.indexOf('调度管理')!=-1">
+								<input class="permissionCheckbox" value="run" type="checkbox"/>
+							</td>
+							<td class="v-middle" ng-if="key.indexOf('调度管理')==-1">
+								<input class="permissionCheckbox" value="run" type="checkbox" disabled="disabled"/>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<!-- 分割线 -->
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+
+				<!--btn-->
+				<div class="form-group">
+					<div class="col-sm-6 col-sm-offset-2">
+						<button type="reset" class="btn btn-default w-xs">重置</button>
+						<button type="submit" class="btn btn-info w-xs m-l-xl"
+							ng-disabled="isDisabled">保存</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

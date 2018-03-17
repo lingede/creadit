@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.castiel.dao.scheduler.TaskSchedulerExpandMapper">
+	<select id="queryGroup" parameterType="java.util.Map" resultType="java.lang.String">
+		select id_ from task_group where 1=1
+		<if test="keyword != null">
+			and (group_name like CONCAT('%',#{keyword},'%') or group_desc like CONCAT('%',#{keyword},'%'))
+		</if>
+	</select>
+	<select id="queryScheduler" parameterType="java.util.Map" resultType="java.lang.String">
+		select id_ from task_scheduler where 1=1
+		<if test="taskType != null">and task_type=#{taskType}</if>
+		<if test="keyword != null">
+			and (task_type like CONCAT('%',#{keyword},'%') or task_desc like CONCAT('%',#{keyword},'%') or task_name like CONCAT('%',#{keyword},'%'))
+		</if>
+	</select>
+	<select id="queryLog" parameterType="java.util.Map" resultType="java.lang.String">
+		select id_ from task_fire_log where 1=1
+		<if test="keyword != null">
+			and (group_name like CONCAT('%',#{keyword},'%') or task_name like CONCAT('%',#{keyword},'%'))
+		</if>
+		order by start_time desc
+	</select>
+	<select id="getTaskGroupsByTaskGroupName" parameterType="java.lang.String" resultMap="com.castiel.dao.generator.TaskGroupMapper.BaseResultMap">
+		select * from task_group where group_name = #{taskGroupName}
+	</select>
+	
+	<select id="getTaskSchedulersByTaskSchedulerName" parameterType="java.lang.String" resultMap="com.castiel.dao.generator.TaskSchedulerMapper.BaseResultMap">
+		select * from task_scheduler where task_name = #{taskName}
+	</select>
+</mapper>

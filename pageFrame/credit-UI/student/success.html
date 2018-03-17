@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/weui.min.css">
+		<link rel="stylesheet" href="css/jquery-weui.min.css">
+		<link rel="stylesheet" href="css/demos.css" />
+	</head>
+	<body>
+		<div class="weui-msg">
+  			<div class="weui-msg__icon-area"><i class="weui-icon-success weui-icon_msg"></i></div>
+  			<div class="weui-msg__text-area">
+   			 	<h2 class="weui-msg__title">操作成功</h2>
+  			</div>
+  		<div class="weui-msg__opr-area">
+    		<p class="weui-btn-area">
+      			<a href="javascript:;" class="weui-btn weui-btn_primary" id="a_back">返	回</a>
+    		</p>
+  		</div>
+  		<div class="weui-msg__extra-area">
+    		<div class="weui-footer">
+      			<p class="weui-footer__text">Copyright © 2008-2016 电子科技大学</p>
+    		</div>
+  		</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-2.1.4.js" ></script>
+		<script>
+			$(function(){
+				$("#a_back").click(function(){
+					var stuId = GetQueryString("id");
+					window.location.href = "stuinfo.html?id="+stuId;
+				});
+			});
+			function GetQueryString(name)
+			{
+			     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			     var r = window.location.search.substr(1).match(reg);
+			     if(r!=null)return  unescape(r[2]); return null;
+			}
+		</script>
+</html>

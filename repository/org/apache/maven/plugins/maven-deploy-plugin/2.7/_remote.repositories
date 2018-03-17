@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Fri Feb 03 16:34:57 CST 2017
+maven-deploy-plugin-2.7.jar>alimaven=
+maven-deploy-plugin-2.7.pom>alimaven=
+maven-deploy-plugin-2.7.pom>publicMirror=
+maven-deploy-plugin-2.7.jar>publicMirror=

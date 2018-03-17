@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Fri Feb 03 16:41:32 CST 2017
+maven-filtering-1.0.jar>publicMirror=
+maven-filtering-1.0.jar>alimaven=
+maven-filtering-1.0.pom>alimaven=
+maven-filtering-1.0.pom>publicMirror=

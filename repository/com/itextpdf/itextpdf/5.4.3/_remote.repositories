@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Tue Jun 27 16:24:41 CST 2017
+itextpdf-5.4.3.jar>alimaven=
+itextpdf-5.4.3.pom>alimaven=
+itextpdf-5.4.3.pom>nexus-aliyun=
+itextpdf-5.4.3.jar>nexus-aliyun=

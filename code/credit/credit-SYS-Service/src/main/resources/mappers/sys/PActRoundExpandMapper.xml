@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.castiel.dao.sys.PActRoundExpandMapper">
+	<resultMap id="PActRoundMap" type="com.castiel.model.generator.PActRound">
+		<id column="id_" jdbcType="VARCHAR" property="id" />
+		<result column="STU_ID" jdbcType="VARCHAR" property="stuId" />
+		<result column="DEPT_ID" jdbcType="VARCHAR" property="deptId" />
+		<result column="SCORE_CYCLE_START_TIME" jdbcType="DATE" property="scoreCycleStartTime" />
+		<result column="SCORE_CYCLE_END_TIME" jdbcType="DATE" property="scoreCycleEndTime" />
+		<result column="TOTAL" jdbcType="INTEGER" property="total" />
+		<result column="ISAFFIRM" jdbcType="INTEGER" property="isaffirm" />
+		<result column="AFFIRM_SCORE" jdbcType="INTEGER" property="affirmScore" />
+		<result column="AFFIRM_TIME" jdbcType="DATE" property="affirmTime" />
+		<result column="REVIEW_STATUS" jdbcType="INTEGER" property="reviewStatus" />
+		<result column="REVIEW_REASON" jdbcType="VARCHAR" property="reviewReason" />
+		<result column="REVIEW_TIME" jdbcType="TIMESTAMP" property="reviewTime" />
+		<result column="SCORE_VALUE" jdbcType="VARCHAR" property="scoreValue" />
+		<result column="REVIEW_NAME" jdbcType="VARCHAR" property="reviewName" />
+		<result column="TOTAL2" jdbcType="INTEGER" property="total2" />
+		<result column="ISAFFIRM2" jdbcType="INTEGER" property="isaffirm2" />
+		<result column="AFFIRM_SCORE2" jdbcType="INTEGER" property="affirmScore2" />
+		<result column="AFFIRM_TIME2" jdbcType="DATE" property="affirmTime2" />
+		<result column="REVIEW_STATUS2" jdbcType="INTEGER" property="reviewStatus2" />
+		<result column="REVIEW_REASON2" jdbcType="VARCHAR" property="reviewReason2" />
+		<result column="REVIEW_TIME2" jdbcType="TIMESTAMP" property="reviewTime2" />
+		<result column="SCORE_VALUE2" jdbcType="VARCHAR" property="scoreValue2" />
+		<result column="REVIEW_NAME2" jdbcType="VARCHAR" property="reviewName2" />		
+	</resultMap>
+	
+	<resultMap id="PActRoundBeanMap" type="com.castiel.model.sys.PActRoundBean">
+		<id column="id_" jdbcType="VARCHAR" property="id" />
+		<result column="STU_ID" jdbcType="VARCHAR" property="stuId" />
+		<result column="DEPT_ID" jdbcType="VARCHAR" property="deptId" />
+		<result column="SCORE_CYCLE_START_TIME" jdbcType="DATE" property="scoreCycleStartTime" />
+		<result column="SCORE_CYCLE_END_TIME" jdbcType="DATE" property="scoreCycleEndTime" />
+		<result column="TOTAL" jdbcType="INTEGER" property="total" />
+		<result column="ISAFFIRM" jdbcType="INTEGER" property="isaffirm" />
+		<result column="AFFIRM_SCORE" jdbcType="INTEGER" property="affirmScore" />
+		<result column="AFFIRM_TIME" jdbcType="DATE" property="affirmTime" />
+		<result column="REVIEW_STATUS" jdbcType="INTEGER" property="reviewStatus" />
+		<result column="REVIEW_REASON" jdbcType="VARCHAR" property="reviewReason" />
+		<result column="REVIEW_TIME" jdbcType="TIMESTAMP" property="reviewTime" />
+		<result column="SCORE_VALUE" jdbcType="VARCHAR" property="scoreValue" />
+		<result column="REVIEW_NAME" jdbcType="VARCHAR" property="reviewName" />
+		<result column="TOTAL2" jdbcType="INTEGER" property="total2" />
+		<result column="ISAFFIRM2" jdbcType="INTEGER" property="isaffirm2" />
+		<result column="AFFIRM_SCORE2" jdbcType="INTEGER" property="affirmScore2" />
+		<result column="AFFIRM_TIME2" jdbcType="DATE" property="affirmTime2" />
+		<result column="REVIEW_STATUS2" jdbcType="INTEGER" property="reviewStatus2" />
+		<result column="REVIEW_REASON2" jdbcType="VARCHAR" property="reviewReason2" />
+		<result column="REVIEW_TIME2" jdbcType="TIMESTAMP" property="reviewTime2" />
+		<result column="SCORE_VALUE2" jdbcType="VARCHAR" property="scoreValue2" />
+		<result column="REVIEW_NAME2" jdbcType="VARCHAR" property="reviewName2" />	
+	</resultMap>
+
+	<select id="search" resultType="java.lang.String">
+		select id_ from p_act_round where 1 = 1
+		<if test="keyword != null">
+			and (STU_ID like CONCAT('%',#{keyword},'%') or (STU_ID =
+			(select id_ from p_basic_stu where STU_NAME like
+			CONCAT('%',#{keyword},'%'))) )
+		</if>
+		<if test="reviewStatus != null">
+			and (REVIEW_STATUS = #{reviewStatus})
+		</if>
+		<if test="deptId != null">
+			and (DEPT_ID = (select DEPT_NAME from p_basic_dept where
+			id_ = #{deptId}))
+		</if>
+	</select>
+	
+	<select id="search2" resultType="java.lang.String">
+		select id_ from p_act_round where 1 = 1
+		<if test="keyword != null">
+			and (STU_ID like CONCAT('%',#{keyword},'%') or (STU_ID =
+			(select id_ from p_basic_stu where STU_NAME like
+			CONCAT('%',#{keyword},'%'))) )
+		</if>
+		<if test="reviewStatus != null">
+			and (REVIEW_STATUS2 = #{reviewStatus})
+		</if>
+		<if test="deptId != null">
+			and (DEPT_ID = (select DEPT_NAME from p_basic_dept where
+			id_ = #{deptId}))
+		</if>
+	</select>
+
+	<update id="review">
+		<if test="isPass == 1">
+			UPDATE
+			p_act_round SET REVIEW_STATUS = 1,REVIEW_TIME = #{date},SCORE_VALUE =
+			AFFIRM_SCORE,REVIEW_NAME = #{reviewName}
+			WHERE
+			id_ = #{id}
+			AND REVIEW_STATUS = 0
+			AND ISAFFIRM = 1
+			AND (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ =
+			#{deptId}))
+		</if>
+		<if test="isPass ==0">
+			UPDATE
+			p_act_round SET REVIEW_STATUS = 2,REVIEW_TIME = #{date},REVIEW_REASON =
+			#{reviewReason},REVIEW_NAME = #{reviewName}
+			WHERE id_ = #{id}
+			AND REVIEW_STATUS = 0
+			AND ISAFFIRM = 1
+			AND (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ =
+			#{deptId}))
+		</if>
+	</update>
+	
+	<update id="review2">
+		<if test="isPass == 1">
+			UPDATE
+			p_act_round SET REVIEW_STATUS2 = 1,REVIEW_TIME2 = #{date},SCORE_VALUE2 =
+			AFFIRM_SCORE2,REVIEW_NAME2 = #{reviewName}
+			WHERE
+			id_ = #{id}
+			AND REVIEW_STATUS2 = 0
+			AND ISAFFIRM2 = 1
+			AND (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ =
+			#{deptId}))
+		</if>
+		<if test="isPass ==0">
+			UPDATE
+			p_act_round SET REVIEW_STATUS2 = 2,REVIEW_TIME2 = #{date},REVIEW_REASON2 =
+			#{reviewReason},REVIEW_NAME2 = #{reviewName}
+			WHERE id_ = #{id}
+			AND REVIEW_STATUS2 = 0
+			AND ISAFFIRM2 = 1
+			AND (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ =
+			#{deptId}))
+		</if>
+	</update>
+	
+	<update id="reviewAll">
+		<if test="isPass == 1">
+			UPDATE p_act_round SET REVIEW_STATUS = 1,REVIEW_TIME = #{date},SCORE_VALUE
+			= AFFIRM_SCORE,REVIEW_NAME = #{reviewName}
+			WHERE REVIEW_STATUS = 0 AND ISAFFIRM = 1 AND (DEPT_ID
+			= (select DEPT_NAME from p_basic_dept where id_ = #{deptId}))
+		</if>
+		<if test="isPass == 0">
+			UPDATE p_act_round SET REVIEW_STATUS = 2,REVIEW_TIME =
+			#{date},REVIEW_REASON = #{reviewReason},REVIEW_NAME = #{reviewName}
+			 WHERE REVIEW_STATUS = 0 AND
+			ISAFFIRM = 1 AND (DEPT_ID = (select DEPT_NAME from p_basic_dept where
+			id_ = #{deptId}))
+		</if>
+	</update>
+	<update id="reviewAll2">
+		<if test="isPass == 1">
+			UPDATE p_act_round SET REVIEW_STATUS2 = 1,REVIEW_TIME2 = #{date},SCORE_VALUE2
+			= AFFIRM_SCORE2,REVIEW_NAME2 = #{reviewName}
+			WHERE REVIEW_STATUS2 = 0 AND ISAFFIRM2 = 1 AND (DEPT_ID
+			= (select DEPT_NAME from p_basic_dept where id_ = #{deptId}))
+		</if>
+		<if test="isPass == 0">
+			UPDATE p_act_round SET REVIEW_STATUS2 = 2,REVIEW_TIME2 =
+			#{date},REVIEW_REASON2 = #{reviewReason},REVIEW_NAME2 = #{reviewName}
+			 WHERE REVIEW_STATUS2 = 0 AND
+			ISAFFIRM2 = 1 AND (DEPT_ID = (select DEPT_NAME from p_basic_dept where
+			id_ = #{deptId}))
+		</if>
+	</update>
+	<update id="reviewByStuId">
+	<if test="isPass == 1">
+			UPDATE
+			p_act_round SET REVIEW_STATUS = 1,REVIEW_TIME = #{date},SCORE_VALUE =
+			AFFIRM_SCORE,REVIEW_NAME = #{reviewName}
+			WHERE
+			STU_ID = #{stuId}
+			AND REVIEW_STATUS = 0
+			AND ISAFFIRM = 1
+			AND (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ =
+			#{deptId}))
+		</if>
+		<if test="isPass ==0">
+			UPDATE
+			p_act_round SET REVIEW_STATUS = 2,REVIEW_TIME = #{date},REVIEW_REASON =
+			#{reviewReason},REVIEW_NAME = #{reviewName}
+			WHERE STU_ID = #{stuId}
+			AND REVIEW_STATUS = 0
+			AND ISAFFIRM = 1
+			AND (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ =
+			#{deptId}))
+		</if>
+	</update>
+	<update id="reviewByStuId2">
+	<if test="isPass == 1">
+			UPDATE
+			p_act_round SET REVIEW_STATUS2 = 1,REVIEW_TIME2 = #{date},SCORE_VALUE2 =
+			AFFIRM_SCORE2,REVIEW_NAME2 = #{reviewName}
+			WHERE
+			STU_ID = #{stuId}
+			AND REVIEW_STATUS2 = 0
+			AND ISAFFIRM2 = 1
+			AND (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ =
+			#{deptId}))
+		</if>
+		<if test="isPass ==0">
+			UPDATE
+			p_act_round SET REVIEW_STATUS2 = 2,REVIEW_TIME2 = #{date},REVIEW_REASON2 =
+			#{reviewReason},REVIEW_NAME2 = #{reviewName}
+			WHERE STU_ID = #{stuId}
+			AND REVIEW_STATUS2 = 0
+			AND ISAFFIRM2 = 1
+			AND (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ =
+			#{deptId}))
+		</if>
+	</update>
+	<update id="applyScore">
+		UPDATE p_act_round
+		SET AFFIRM_SCORE =
+		#{score},ISAFFIRM = 1,AFFIRM_TIME = #{date},REVIEW_STATUS=0
+		WHERE
+		STU_ID = #{stuId}
+	</update>
+	
+	<update id="applyScore2">
+		UPDATE p_act_round
+		SET AFFIRM_SCORE2 =
+		#{score},ISAFFIRM2 = 1,AFFIRM_TIME2 = #{date},REVIEW_STATUS2=0
+		WHERE
+		STU_ID = #{stuId}
+	</update>
+
+	<select id="searchByStuId" resultMap="PActRoundBeanMap">
+		SELECT *
+		FROM p_act_round
+		where STU_ID = #{stuId}
+		ORDER BY SCORE_CYCLE_START_TIME
+		DESC LIMIT 1
+	</select>
+	
+	<select id="queryStudentByReviewStatus" resultMap="PActRoundBeanMap">
+		SELECT *
+		FROM p_act_round
+		WHERE ISAFFIRM = 1
+		<if test="reviewStatus != null">
+		AND REVIEW_STATUS = #{reviewStatus}
+		</if>
+		<if test="deptId != null">
+		AND (DEPT_ID = (select DEPT_NAME from p_basic_dept where
+			id_ = #{deptId}))
+		</if>	
+	</select>
+	
+	<select id="queryStudentByReviewStatus2" resultMap="PActRoundBeanMap">
+		SELECT *
+		FROM p_act_round
+		WHERE ISAFFIRM2 = 1
+		<if test="reviewStatus != null">
+		AND REVIEW_STATUS2 = #{reviewStatus}
+		</if>
+		<if test="deptId != null">
+		AND (DEPT_ID = (select DEPT_NAME from p_basic_dept where
+			id_ = #{deptId}))
+		</if>	
+	</select>
+	
+	<select id="searchByStuIdAndTime" resultMap="PActRoundMap">
+		SELECT *
+		FROM
+		p_act_round
+		where STU_ID = #{stuId}
+		AND
+		SCORE_CYCLE_START_TIME &gt;=#{start}
+		AND
+		SCORE_CYCLE_END_TIME &lt;=#{end}
+		ORDER BY SCORE_CYCLE_START_TIME
+	</select>
+	<select id="qExists" resultType="java.lang.String">
+		SELECT
+		p.id_
+		FROM
+		p_act_round p
+		WHERE
+		p.STU_ID = #{stuId}
+		AND p.SCORE_CYCLE_START_TIME = #{start}
+		AND
+		p.SCORE_CYCLE_END_TIME = #{end}
+	</select>
+
+	<insert id="inserRound" parameterType="com.castiel.model.generator.PActRound">
+		insert into p_act_round (id_, STU_ID, DEPT_ID,
+		SCORE_CYCLE_START_TIME, SCORE_CYCLE_END_TIME, TOTAL, TOTAL2)
+		values (#{id,jdbcType=VARCHAR}, #{stuId,jdbcType=VARCHAR},
+		#{deptId,jdbcType=VARCHAR},
+		#{scoreCycleStartTime,jdbcType=DATE}, #{scoreCycleEndTime,jdbcType=DATE}, #{total,jdbcType=INTEGER}, #{total2,jdbcType=INTEGER})
+	</insert>
+
+
+	<update id="updateTotal" parameterType="com.castiel.model.generator.PActRound">
+		update p_act_round
+		set
+		TOTAL = #{total,jdbcType=INTEGER}
+		where id_ = #{stuId,jdbcType=VARCHAR}
+	</update>
+	<update id="updateTotal2" parameterType="com.castiel.model.generator.PActRound">
+		update p_act_round
+		set
+		TOTAL2 = #{total,jdbcType=INTEGER}
+		where id_ = #{stuId,jdbcType=VARCHAR}
+	</update>
+</mapper>

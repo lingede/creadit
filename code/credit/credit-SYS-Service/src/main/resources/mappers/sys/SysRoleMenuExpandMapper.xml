@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.castiel.dao.sys.SysRoleMenuExpandMapper">
+	<insert id="insert" parameterType="com.castiel.model.generator.SysRoleMenu">
+    insert into sys_role_menu (role_id, menu_id, permission_, 
+      enable_, remark_, create_by, 
+      create_time, update_by, update_time
+      )
+    values (#{roleId,jdbcType=VARCHAR}, #{menuId,jdbcType=VARCHAR}, #{permission,jdbcType=VARCHAR}, 
+      #{enable,jdbcType=BIT}, #{remark,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+</mapper>

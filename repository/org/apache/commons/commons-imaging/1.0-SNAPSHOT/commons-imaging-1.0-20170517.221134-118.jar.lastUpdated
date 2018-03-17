@@ -1,0 +1,4 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Tue Jun 27 16:22:43 CST 2017
+@default-apache.snapshots-https\://repository.apache.org/content/repositories/snapshots/.lastUpdated=1498551763839
+https\://repository.apache.org/content/repositories/snapshots/.error=Could not transfer artifact org.apache.commons\:commons-imaging\:jar\:1.0-20170517.221134-118 from/to apache.snapshots (https\://repository.apache.org/content/repositories/snapshots/)\: The operation was cancelled.

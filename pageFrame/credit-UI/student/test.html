@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!-- http://www.webkfa.com -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>HTML5手机页面触屏滑动上下翻页特效</title>
+<meta charset="utf-8">
+<meta name="apple-touch-fullscreen" content="YES">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="pragram" content="no-cache">
+<link rel="stylesheet" href="css/weui.min.css">
+<link rel="stylesheet" href="css/jquery-weui.min.css">
+<link rel="stylesheet" href="css/demos.css" />
+<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+</head>
+
+<body ontouchstart="">
+
+	<header class='demos-header'>
+		<h1 class="demos-title">活动列表</h1>
+	</header>
+	<div id="list" class="demos-content-padded">
+		<div class="weui-cells">
+			<!--<a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+              <p>cell standard</p>
+            </div>
+            <div class="weui-cell__ft">
+            </div>
+          </a>-->
+		</div>
+	</div>
+	<div class="weui-loadmore" id="div_loading">
+		<i class="weui-loading"></i>
+		<span class="weui-loadmore__tips">正在加载</span>
+	</div>
+	<input type="hidden" id="offset" value="0"/>
+	<script src="js/jquery-2.1.4.js"></script>
+	<script src="js/fastclick.js"></script>
+	<script>
+		$(function() {
+			FastClick.attach(document.body);
+			$("#div_loading").show();
+			first_load();
+			$("#div_loading").hide();
+		})
+		
+		function first_load(){
+			var location = (window.location+'').split('/');
+	    	var basePath = "http://" + location[2] + "/" + location[3];
+			$.ajax({
+	    	    type: "post",
+	    	    data: {limit:'25',offset:$('#offset').val()},
+	    	    url: basePath + '/ActList',
+	    	    success: function (result) {
+	    	    	var offset = result.offset;
+	    	    	$('#offset').attr('value',offset);
+	    	    	$.each(result.rows, function(index,object) {
+	    	    	 	$(".weui-cells").append('<a class="weui-cell weui-cell_access" href="javascript:;">' +
+		    				'<div class="weui-cell__bd">' +
+							'<p>' + object.actName + '</p>' +
+							'</div>' +
+							'<div class="weui-cell__ft">查看详情</div>' +
+							'</a>'
+						);
+	    	    	});
+	    	    }
+	    	}); 
+		};
+
+	</script>
+	<script src="js/jquery-weui.min.js"></script>
+		
+	<script>
+		var loading = 1;
+		$(document.body).infinite().on("infinite", function() {
+			if(loading == 0) return;
+			loading = loading - 1;
+			$('#div_loading').show();
+			setTimeout(variuos_load(), 2000);
+			loading = loading + 1;
+		});
+		
+		function variuos_load(){
+			var location = (window.location+'').split('/');
+	    	var basePath = "http://" + location[2] + "/" + location[3];
+			$.ajax({
+	    	    type: "post",
+	    	    data: {limit:'5',offset:$('#offset').val()},
+	    	    url: basePath + '/ActList',
+	    	    success: function (result) {
+	    	    	 var offset = result.offset;
+	    	    	 $('#offset').attr('value',offset);
+	    	    	 if(result.rows != null){
+	    	    	    $.each(result.rows, function(index,object) {
+	    	    	 		$(".weui-cells").append('<a class="weui-cell weui-cell_access" href="javascript:;">' +
+		    					'<div class="weui-cell__bd">' +
+								'<p>' + object.actName + '</p>' +
+								'</div>' +
+								'<div class="weui-cell__ft">查看详情</div>' +
+								'</a>'
+							);
+	    	    		});
+	    	    	}
+	    	    	$('#div_loading').hide();
+	    	    }
+	    	}); 
+		};
+	</script>
+
+</body>
+</html>

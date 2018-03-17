@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Fri Feb 03 16:34:57 CST 2017
+maven-site-plugin-3.3.jar>alimaven=
+maven-site-plugin-3.3.pom>alimaven=
+maven-site-plugin-3.3.pom>publicMirror=
+maven-site-plugin-3.3.jar>publicMirror=

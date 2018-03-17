@@ -1,0 +1,4 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Tue Jun 27 16:20:19 CST 2017
+http\://maven.aliyun.com/nexus/content/groups/public/.error=Could not transfer artifact org.springframework.boot\:spring-boot-starter-data-jpa\:pom\:1.5.2.RELEASE from/to alimaven (http\://maven.aliyun.com/nexus/content/groups/public/)\: The operation was cancelled.
+@default-alimaven-http\://maven.aliyun.com/nexus/content/groups/public/.lastUpdated=1498551619674

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.castiel.dao.wechat.WechatMenuExpandMapper">
+	<select id="queryTopLevelWechatMenus" resultMap="com.castiel.dao.generator.WechatMenuMapper.BaseResultMap">
+		 select  * from  
+		 wechat_menu wm 
+		 where 
+		 wm.level_ = 1 order by sort_ asc
+	</select>
+	<select id="queryWechatMenusByParentId" parameterType="java.lang.String" resultMap="com.castiel.dao.generator.WechatMenuMapper.BaseResultMap">
+		 select  * from  
+		 wechat_menu wm 
+		 where 
+		 wm.parent_id = #{parentId} order by sort_ asc
+	</select>
+</mapper>

@@ -1,0 +1,4 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Mon Jul 18 13:24:22 CST 2016
+default-http\://repo1.maven.org/maven2/.lastUpdated=1468819462598
+http\://repo1.maven.org/maven2/.error=Could not transfer artifact net.coobird\:thumbnailator\:jar\:0.4.8 from/to publicMirror (http\://repo1.maven.org/maven2)\: No response received after 60000

@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Tue Jun 27 16:24:43 CST 2017
+plexus-archiver-2.4.4.pom>publicMirror=
+plexus-archiver-2.4.4.jar>publicMirror=
+plexus-archiver-2.4.4.jar>alimaven=
+plexus-archiver-2.4.4.pom>alimaven=

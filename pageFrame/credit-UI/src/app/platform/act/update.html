@@ -1,0 +1,167 @@
+<!-- toaster directive -->
+<toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+<!-- / toaster directive -->
+
+<!-- 导航条 -->
+<div class="bg-white bread-crumb">
+	<ul class="breadcrumb b-a m-b-n-xs lter b-b wrapper-md">
+		<li>
+			<a ui-sref="main"><i class="fa fa-home"></i> 首页</a>
+		</li>
+		<li>
+			<a ui-sref="main.platform.act.list">活动管理</a>
+		</li>
+		<li class="active" ng-bind="title"></li>
+	</ul>
+</div>
+
+<!-- 内容区域 -->
+<div class="wrapper-md content">
+	<div class="panel panel-default">
+		<!-- 头部 -->
+		<div class="panel-heading font-bold">{{title}}
+			<a class="btn btn-sm btn-icon btn-rounded btn-default pull-right m-t-n-xs" ui-sref="main.platform.act.list"><i class="text-md fa fa-times text-muted"></i></a>
+		</div>
+		<!--表单-->
+		<div class="panel-body">
+			<form class="form-horizontal" name="user_form">
+				<!--活动名称-->
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="actName">活动名称</label>
+					<div class="col-sm-6">
+						<input ng-disabled="true" type="text" class="form-control" name="actName" id="actName" placeholder="请输入活动名称..." ng-model="record.actName">
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+				<!--学院编号
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="deptId">学院(学院帐号选择)</label>
+					<div class="col-sm-6">
+						<div class="selects">
+							<select ng-disabled="true" class="form-control" name="deptId" id="deptId" ng-model="record.deptId" ng-options="pBasicDeptBean.deptId as pBasicDeptBean.deptName  for pBasicDeptBean in pBasicDeptBeans">
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>-->
+				<!--活动编号
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="actNo">活动编号</label>
+					<div class="col-sm-6">
+						<input ng-disabled="true" type="text" class="form-control" name="actNo" id="actNo" placeholder="请输入活动编号..." ng-model="record.actNo">
+						<span class="help-block m-b-none"></span>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>-->
+
+				<!--报名开始时间-->
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="actEnrolStartTime">报名开始时间</label>
+					<div class="col-sm-6">
+						<input type="datetime-local" class="form-control" name="actEnrolStartTime" id="actEnrolStartTime" placeholder="请输入报名开始时间..." ng-model="record.actEnrolStartTime">
+						<span class="help-block m-b-none"></span>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+
+				<!--报名结束时间-->
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="actEnrolEndTime">报名结束时间</label>
+					<div class="col-sm-6">
+						<input type="datetime-local" class="form-control" name="actEnrolEndTime" id="actEnrolEndTime" placeholder="请输入报名结束时间..." ng-model="record.actEnrolEndTime">
+						<span class="help-block m-b-none"></span>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+
+				<!--活动开始时间
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="actStartTime">活动开始时间</label>
+					<div class="col-sm-6">
+						<input ng-disabled="true" type="datetime-local" class="form-control" name="actStartTime" id="actStartTime" placeholder="请输入活动开始时间..." ng-model="record.actStartTime">
+						<span class="help-block m-b-none"></span>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>-->
+
+				<!--活动结束时间
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="actEndTime">活动结束时间</label>
+					<div class="col-sm-6">
+						<input ng-disabled="true" type="datetime-local" class="form-control" name="actEndTime" id="actEndTime" placeholder="请输入报活动结束时间..." ng-model="record.actEndTime">
+						<span class="help-block m-b-none"></span>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>-->
+
+				<!--活动取消时间-->
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="actCancleTime">活动取消时间</label>
+					<div class="col-sm-6">
+						<input type="datetime-local" class="form-control" name="actCancleTime" id="actCancleTime" placeholder="请输入报活动取消时间..." ng-model="record.actCancleTime">
+						<span class="help-block m-b-none"></span>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+
+				<!--活动内容
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="actContent">活动内容</label>
+					<div class="col-sm-6">
+						<input ng-disabled="true" type="text" class="form-control" name="actContent" id="actContent" placeholder="请输入活动内容..." ng-model="record.actContent">
+						<span class="help-block m-b-none"></span>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>-->
+
+				<!--活动场地
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="actPlace">活动场地</label>
+					<div class="col-sm-6">
+						<input ng-disabled="true" type="text" class="form-control" name="actPlace" id="actPlace" placeholder="请输入活动场地..." ng-model="record.actPlace">
+						<span class="help-block m-b-none"></span>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>-->
+
+				<!--活动人数-->
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="actPeopleNumber">活动人数</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="actPeopleNumber" id="actPeopleNumber" placeholder="请输入活动最大人数..." ng-model="record.actPeopleNumber">
+						<span class="help-block m-b-none"></span>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+
+				<!--教师人数-->
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="actTeacherNumber">教师人数</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="actTeacherNumber" id="actTeacherNumber" placeholder="请输入教师最大人数..." ng-model="record.actTeacherNumber" ng-change="updateSNumber()">
+						<span class="help-block m-b-none"></span>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+
+				<!--学生人数-->
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="actStudentNumber">学生人数</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="actStudentNumber" id="actStudentNumber" placeholder="请输入学生最大人数..." ng-model="record.actStudentNumber" ng-change="updateTNumber()">
+						<span class="help-block m-b-none"></span>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+
+				<!--btn-->
+				<div class="form-group">
+					<div class="col-sm-6 col-sm-offset-2">
+						<button type="reset" class="btn btn-default w-xs">重置</button>
+						<button type="submit" class="btn btn-info w-xs m-l-xl" ng-disabled="isDisabled">保存</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

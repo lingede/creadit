@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.castiel.dao.sys.PXytjExpandMapper">
+<resultMap id="PActRoundBeanMap" type="com.castiel.model.sys.PActRoundBean">
+    <id column="id_" jdbcType="VARCHAR" property="id" />
+    <result column="STU_ID" jdbcType="VARCHAR" property="stuId" />
+    <result column="DEPT_ID" jdbcType="VARCHAR" property="deptId" />
+    <result column="SCORE_CYCLE_START_TIME" jdbcType="DATE" property="scoreCycleStartTime" />
+    <result column="SCORE_CYCLE_END_TIME" jdbcType="DATE" property="scoreCycleEndTime" />
+    <result column="TOTAL" jdbcType="INTEGER" property="total" />
+    <result column="ISAFFIRM" jdbcType="INTEGER" property="isaffirm" />
+    <result column="AFFIRM_SCORE" jdbcType="INTEGER" property="affirmScore" />
+    <result column="AFFIRM_TIME" jdbcType="DATE" property="affirmTime" />
+    <result column="REVIEW_STATUS" jdbcType="INTEGER" property="reviewStatus" />
+    <result column="REVIEW_REASON" jdbcType="VARCHAR" property="reviewReason" />
+    <result column="REVIEW_TIME" jdbcType="TIMESTAMP" property="reviewTime" />
+    <result column="SCORE_VALUE" jdbcType="VARCHAR" property="scoreValue" />
+    <result column="TOTAL2" jdbcType="INTEGER" property="total2" />
+    <result column="ISAFFIRM2" jdbcType="INTEGER" property="isaffirm2" />
+    <result column="AFFIRM_SCORE2" jdbcType="INTEGER" property="affirmScore2" />
+    <result column="AFFIRM_TIME2" jdbcType="DATE" property="affirmTime2" />
+    <result column="REVIEW_STATUS2" jdbcType="INTEGER" property="reviewStatus2" />
+    <result column="REVIEW_REASON2" jdbcType="VARCHAR" property="reviewReason2" />
+    <result column="REVIEW_TIME2" jdbcType="TIMESTAMP" property="reviewTime2" />
+    <result column="SCORE_VALUE2" jdbcType="VARCHAR" property="scoreValue2" />
+    <result column="STU_NAME" jdbcType="VARCHAR" property="stuName"/>
+  </resultMap>
+  <resultMap id="PXytjCardFlowBeanMap" type="com.castiel.model.sys.PXytjCardFlowBean">
+    <id column="id_" jdbcType="VARCHAR" property="id" />
+    <result column="STU_ID" jdbcType="VARCHAR" property="stuId" />
+    <result column="STU_NAME" jdbcType="VARCHAR" property="stuName" />
+    <result column="DEPT_NAME" jdbcType="VARCHAR" property="deptName" />
+    <result column="STU_TYPE" jdbcType="INTEGER" property="stuType" />
+    <result column="ACT_NAME" jdbcType="VARCHAR" property="actName" />
+    <result column="ACT_TIME" jdbcType="TIMESTAMP" property="actTime" />
+    <result column="ACT_PLACE" jdbcType="VARCHAR" property="actPlace" />
+    <result column="SIGN_TIME" jdbcType="TIMESTAMP" property="signTime" />
+    <result column="ISVALID" jdbcType="INTEGER" property="isvalid" />
+    <result column="INVALID_REASON" jdbcType="VARCHAR" property="invalidReason" />
+    <result column="STORAGE_TIME" jdbcType="TIMESTAMP" property="storageTime" />
+    <result column="STU_MAJOR" jdbcType="VARCHAR" property="stuMajor"/>
+    <result column="ACT_NO" jdbcType="VARCHAR" property="actNo"/>
+  </resultMap>
+  <resultMap id="PXytiActStatisticsBeanMap" type="com.castiel.model.sys.PXytjActStatisticsBean">
+    <id column="id_" jdbcType="VARCHAR" property="id" />
+    <result column="ACT_NAME" jdbcType="VARCHAR" property="actName" />
+    <result column="DEPT_ID" jdbcType="VARCHAR" property="deptId" />
+    <result column="ACT_NO" jdbcType="VARCHAR" property="actNo" />
+    <result column="ACT_ENROL_START_TIME" jdbcType="TIMESTAMP" property="actEnrolStartTime" />
+    <result column="ACT_ENROL_END_TIME" jdbcType="TIMESTAMP" property="actEnrolEndTime" />
+    <result column="ACT_START_TIME" jdbcType="TIMESTAMP" property="actStartTime" />
+    <result column="ACT_END_TIME" jdbcType="TIMESTAMP" property="actEndTime" />
+    <result column="ACT_CONTENT" jdbcType="VARCHAR" property="actContent" />
+    <result column="ACT_PLACE" jdbcType="VARCHAR" property="actPlace" />
+    <result column="ENROLLMENT" jdbcType="INTEGER" property="enrollment"/>
+  </resultMap>
+	<select id="cardFlowSearch" resultType="java.lang.String">
+		select id_ from p_card_flow where 1=1
+		<if test="keyword != null">
+		and (STU_ID like CONCAT('%',#{keyword},'%') )
+		or 
+		(STU_NAME like CONCAT('%',#{keyword},'%'))
+		</if>
+		<if test="deptId != null">
+		and (DEPT_NAME = (select DEPT_NAME from p_basic_dept where id_ = #{deptId}))
+		</if>
+		<if test="actStartDate != null">
+		and (SIGN_TIME &gt; #{actStartDate})
+		</if>
+		<if test="actEndDate != null">
+		and (SIGN_TIME &lt; #{actEndDate})
+		</if>
+		
+	</select>
+	
+	<select id="queryCardFlowAll" resultMap="PXytjCardFlowBeanMap">
+		SELECT p_card_flow.*,p_basic_stu.STU_MAJOR,p_basic_act.ACT_NO
+		FROM p_card_flow,p_basic_stu,p_basic_act
+		WHERE (p_card_flow.STU_ID = p_basic_stu.id_) 
+		AND  
+		(p_card_flow.ACT_NAME = p_basic_act.ACT_NAME)
+		AND 
+		(p_card_flow.DEPT_NAME = (select DEPT_NAME from p_basic_dept where id_ = #{deptId}))
+		<if test="actStartDate != null">
+		and (p_card_flow.SIGN_TIME &gt; #{actStartDate})
+		</if>
+		<if test="actEndDate != null">
+		and (p_card_flow.SIGN_TIME &lt; #{actEndDate})
+		</if>
+	</select>
+	
+	<select id="pActRoundSearch" resultMap="PActRoundBeanMap">
+		SELECT
+			p_act_round.id_,
+			STU_ID,
+			p_act_round.DEPT_ID,
+			SCORE_CYCLE_START_TIME,
+			SCORE_CYCLE_END_TIME,
+			TOTAL,
+			ISAFFIRM,
+			AFFIRM_SCORE,
+			AFFIRM_TIME,
+			REVIEW_STATUS,
+			REVIEW_REASON,
+			REVIEW_TIME,
+			SCORE_VALUE,
+			TOTAL2,
+			ISAFFIRM2,
+			AFFIRM_SCORE2,
+			AFFIRM_TIME2,
+			REVIEW_STATUS2,
+			REVIEW_REASON2,
+			REVIEW_TIME2,
+			SCORE_VALUE2,
+			STU_NAME 
+		FROM
+			p_act_round,
+			p_basic_stu 
+		WHERE
+			p_act_round.STU_ID = p_basic_stu.id_ 
+		<if test="keyword != null">
+		and (p_act_round.STU_ID like CONCAT('%',#{keyword},'%'))
+		or 
+		(p_basic_stu.STU_NAME like CONCAT('%',#{keyword},'%'))
+		</if>
+		<if test="deptId != null">
+		and (p_act_round.DEPT_ID = (select DEPT_NAME from p_basic_dept where p_basic_dept.id_ = #{deptId}))
+		</if>
+		<if test="reviewDateStart != null">
+		and (p_act_round.REVIEW_TIME &gt; #{reviewDateStart})
+		</if>
+		<if test="reviewDateEnd != null">
+		and (p_act_round.REVIEW_TIME &lt; #{reviewDateEnd})
+		</if>
+	</select>
+	
+	<select id="query1ScoreStu" resultType="java.lang.String">
+		SELECT STU_ID 
+		FROM p_act_round 
+		WHERE DEPT_ID = (SELECT DEPT_NAME FROM p_basic_dept WHERE id_ = #{deptId})
+		AND SCORE_VALUE = 1 OR SCORE_VALUE2=1
+		<if test="reviewDateStart != null">
+		and (p_act_round.REVIEW_TIME &gt; #{reviewDateStart})
+		</if>
+		<if test="reviewDateEnd != null">
+		and (p_act_round.REVIEW_TIME &lt; #{reviewDateEnd})
+		</if>
+	</select>
+	
+	<select id="query2ScoreStu" resultType="java.lang.String">
+		SELECT STU_ID 
+		FROM p_act_round 
+		WHERE DEPT_ID = (SELECT DEPT_NAME FROM p_basic_dept WHERE id_ = #{deptId})
+		AND SCORE_VALUE = 2 OR SCORE_VALUE2=2
+		<if test="reviewDateStart != null">
+		and (p_act_round.REVIEW_TIME &gt; #{reviewDateStart})
+		</if>
+		<if test="reviewDateEnd != null">
+		and (p_act_round.REVIEW_TIME &lt; #{reviewDateEnd})
+		</if>
+	</select>
+	
+	<select id="queryAct" resultMap="PXytiActStatisticsBeanMap">
+		SELECT * 
+		FROM p_basic_act
+		WHERE DEPT_ID =  #{deptId}
+		<if test="actStartDate != null">
+		and (ACT_START_TIME &gt; #{actStartDate})
+		</if>
+		<if test="actEndDate != null">
+		and (ACT_END_TIME &lt; #{actEndDate})
+		</if>
+	</select>
+	
+	<select id="count0ScoreStu" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM p_act_round
+		WHERE (SCORE_VALUE IS NULL OR SCORE_VALUE = 0)
+		<if test="deptId != null">
+			and (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ = #{deptId}))
+		</if>
+		<if test="scoreCycleStartDate != null">
+		and (SCORE_CYCLE_START_TIME &gt;= #{scoreCycleStartDate})
+		</if>
+		<if test="scoreCycleEndDate != null">
+		and (SCORE_CYCLE_END_TIME &lt;= #{scoreCycleEndDate})
+		</if>
+	</select>
+	
+	<select id="count1ScoreStu" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM p_act_round
+		WHERE SCORE_VALUE = 1
+		<if test="deptId != null">
+			and (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ = #{deptId}))
+		</if>
+		<if test="scoreCycleStartDate != null">
+		and (SCORE_CYCLE_START_TIME &gt;= #{scoreCycleStartDate})
+		</if>
+		<if test="scoreCycleEndDate != null">
+		and (SCORE_CYCLE_END_TIME &lt;= #{scoreCycleEndDate})
+		</if>
+	</select>
+	
+	<select id="count2ScoreStu" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM p_act_round
+		WHERE SCORE_VALUE = 2
+		<if test="deptId != null">
+			and (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ = #{deptId}))
+		</if>
+		<if test="scoreCycleStartDate != null">
+		and (SCORE_CYCLE_START_TIME &gt;= #{scoreCycleStartDate})
+		</if>
+		<if test="scoreCycleEndDate != null">
+		and (SCORE_CYCLE_END_TIME &lt;= #{scoreCycleEndDate})
+		</if>
+	</select>
+	
+	
+	
+	<select id="count0ScoreStu2" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM p_act_round
+		WHERE (SCORE_VALUE2 IS NULL OR SCORE_VALUE2 = 0)
+		<if test="deptId != null">
+			and (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ = #{deptId}))
+		</if>
+		<if test="scoreCycleStartDate != null">
+		and (SCORE_CYCLE_START_TIME &gt;= #{scoreCycleStartDate})
+		</if>
+		<if test="scoreCycleEndDate != null">
+		and (SCORE_CYCLE_END_TIME &lt;= #{scoreCycleEndDate})
+		</if>
+	</select>
+	
+	<select id="count1ScoreStu2" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM p_act_round
+		WHERE SCORE_VALUE2 = 1
+		<if test="deptId != null">
+			and (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ = #{deptId}))
+		</if>
+		<if test="scoreCycleStartDate != null">
+		and (SCORE_CYCLE_START_TIME &gt;= #{scoreCycleStartDate})
+		</if>
+		<if test="scoreCycleEndDate != null">
+		and (SCORE_CYCLE_END_TIME &lt;= #{scoreCycleEndDate})
+		</if>
+	</select>
+	
+	<select id="count2ScoreStu2" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM p_act_round
+		WHERE SCORE_VALUE2 = 2
+		<if test="deptId != null">
+			and (DEPT_ID = (select DEPT_NAME from p_basic_dept where id_ = #{deptId}))
+		</if>
+		<if test="scoreCycleStartDate != null">
+		and (SCORE_CYCLE_START_TIME &gt;= #{scoreCycleStartDate})
+		</if>
+		<if test="scoreCycleEndDate != null">
+		and (SCORE_CYCLE_END_TIME &lt;= #{scoreCycleEndDate})
+		</if>
+	</select>
+	
+</mapper>

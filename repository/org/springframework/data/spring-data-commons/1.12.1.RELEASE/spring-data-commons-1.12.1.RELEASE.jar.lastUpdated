@@ -1,0 +1,5 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Sep 19 11:07:17 CST 2016
+@default-spring-libs-release-https\://repo.spring.io/libs-release/.lastUpdated=1474253568968
+https\://repo.spring.io/libs-release/.error=Could not transfer artifact org.springframework.data\:spring-data-commons\:jar\:1.12.1.RELEASE from/to spring-libs-release (https\://repo.spring.io/libs-release)\: The operation was cancelled.
+http\://repo1.maven.org/maven2/.lastUpdated=1474254437634

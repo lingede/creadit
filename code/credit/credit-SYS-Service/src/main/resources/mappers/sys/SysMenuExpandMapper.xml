@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.castiel.dao.sys.SysMenuExpandMapper">
+	<select id="query" parameterType="java.util.Map" resultType="java.lang.String">
+		select id_ from sys_menu where 1=1
+		<if test="parent_id != null">
+			and parent_id = #{parent_id}
+		</if>
+		<if test="keyword != null">
+			and (menu_name like CONCAT('%',#{keyword},'%') or request_ like CONCAT('%',#{keyword},'%'))
+		</if>
+		order by parent_id,sort_no asc
+	</select>
+	<select id="getPermissions" resultType="java.util.Map">
+		select CONCAT(m.id_, code_) as value, CONCAT(menu_name, code_text) as text
+		from sys_menu m
+		join sys_dic_index di on  di.key_='CRUD'
+		join sys_dic d on d.index_id=di.id_
+		order by m.id_
+	</select>
+	<select id="querySysMenusByParentId" parameterType="java.lang.String" resultMap="com.castiel.dao.generator.SysMenuMapper.BaseResultMap">
+		 select  * from  
+		 sys_menu sm 
+		 where 
+		 sm.parent_id = #{parentId}
+	</select>
+	<select id="getSysMenusByMenuName" parameterType="java.lang.String" resultMap="com.castiel.dao.generator.SysMenuMapper.BaseResultMap">
+		select * from sys_menu where menu_name = #{menuName}
+	</select>
+</mapper>

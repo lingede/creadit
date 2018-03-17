@@ -1,0 +1,4 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Mon Jul 18 13:24:21 CST 2016
+default-http\://repo1.maven.org/maven2/.lastUpdated=1468819461684
+http\://repo1.maven.org/maven2/.error=Could not transfer artifact org.mybatis\:mybatis\:jar\:3.4.0 from/to publicMirror (http\://repo1.maven.org/maven2)\: No response received after 60000

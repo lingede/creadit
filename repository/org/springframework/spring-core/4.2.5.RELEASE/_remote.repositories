@@ -1,0 +1,10 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Tue Jun 27 16:24:39 CST 2017
+spring-core-4.2.5.RELEASE.jar>nexus-aliyun=
+spring-core-4.2.5.RELEASE-sources.jar>publicMirror=
+spring-core-4.2.5.RELEASE.pom>publicMirror=
+spring-core-4.2.5.RELEASE.jar>spring-releases=
+spring-core-4.2.5.RELEASE.jar>alimaven=
+spring-core-4.2.5.RELEASE.pom>alimaven=
+spring-core-4.2.5.RELEASE.pom>spring-releases=
+spring-core-4.2.5.RELEASE.pom>nexus-aliyun=

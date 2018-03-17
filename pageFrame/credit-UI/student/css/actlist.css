@@ -1,0 +1,26 @@
+table{
+	table-layout: fixed;  
+    width: 98% border:0px;  
+    margin: 0px; 
+}
+
+th{
+	text-align: center;
+	color: #3cc51f;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 15%;
+    text-align: center;
+}
+
+td:nth-child(1){
+	width: 65%;
+	font-size: 14px;
+  	/*display:inline-block;*/
+  	text-overflow: ellipsis;
+  	/* for IE */
+  	-moz-text-overflow: ellipsis;
+  	/* for Firefox,mozilla */
+  	overflow: hidden;
+  	white-space: nowrap;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>可报名活动</title>
+		<link rel="stylesheet" href="css/weui.min.css">
+		<link rel="stylesheet" href="css/jquery-weui.min.css">
+		<link rel="stylesheet" href="css/demos.css" />
+		<style>
+			.weui-cells {
+				font-size: 25px;
+			}
+		</style>
+		<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+	</head>
+
+	<body ontouchstart style="background-color: #F3F3F3;">
+		<div id="list" class="weui-cells weui-cells_access" style="margin-top: 60px;"></div>
+		<div class="weui-loadmore" id="div_loading">
+			<i class="weui-loading"></i>
+			<span class="weui-loadmore__tips">正在加载</span>
+		</div>
+		<input type="hidden" id="offset" value="0" />
+		<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-weui.min.js"></script>
+		<script src="js/fastclick.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+		<script type="text/javascript" src="js/share.js"></script>
+		<script>
+			function info(actId) {
+				window.location.href = "isenrollactinfo.html?actid=" + actId + "&id=" + stuid;
+			}
+		</script>
+		<script>
+			$(function() {
+				FastClick.attach(document.body);
+				$("#div_loading").show();
+				$(document.body).infinite();
+				first_load();
+				$("#div_loading").hide();
+			});
+
+			function first_load() {
+				var stuid = GetQueryString("id");
+				$(function() {
+					$.ajax({
+						type: "post",
+						url: "/student/isenrollacts",
+						data: {
+							id: stuid,
+							offset: 0,
+							limit: 20
+						},
+						async: true,
+						success: function(result) {
+							$('#offset').attr('value', parseInt(result.data.total));
+							if(parseInt(result.data.total) != 0) {
+								$.each(result.data.pBasicActs, function(index, pBasicAct) {
+									$(".weui-cells").append("<a class='weui-cell weui-cell_access' href='javascript:;' onclick='info(\"" + pBasicAct.id + "\")'>" +
+										'<div class="weui-cell__bd">' +
+										'<p>' + pBasicAct.actName + '</p>' +
+										'</div>' +
+										'<div class="weui-cell__ft">查看详情</div>' +
+										'</a>'
+									);
+								});
+							} else {
+								$(".weui-cells").append("<div class='weui-cell'>没有可报名的活动</div>");
+							}
+
+						},
+					});
+				});
+			}
+		</script>
+		<script>
+			var stuid = GetQueryString("id");
+			var loading = false;
+			$(document.body).infinite().on("infinite", function() {
+				if(loading) return;
+				$("#div_loading").show();
+				loading = true;
+				setTimeout(function() {
+					$.ajax({
+						type: "post",
+						url: "/student/isenrollacts",
+						data: {
+							id: stuid,
+							offset: $('#offset').val(),
+							limit: parseInt($('#offset').val()) + 5
+						},
+						async: true,
+						success: function(result) {
+							if(result.data.total == 0) {
+								loading = false;
+							}
+							var offset = parseInt($('#offset').val());
+							$('#offset').attr('value', parseInt(result.data.total) + offset);
+							if(parseInt(result.data.total) != 0) {
+								$.each(result.data.pBasicActs, function(index, pBasicAct) {
+									$(".weui-cells").append("<a class='weui-cell weui-cell_access' href='javascript:;' onclick='info(\"" + pBasicAct.id + "\")'>" +
+										'<div class="weui-cell__bd">' +
+										'<p>' + pBasicAct.actName + '</p>' +
+										'</div>' +
+										'<div class="weui-cell__ft">查看详情</div>' +
+										'</a>'
+									);
+								});
+							} else {
+								$(".weui-cells").append("<div class='weui-cell'>没有可报名的活动</div>");
+							}
+
+							$('#div_loading').hide();
+						},
+					});
+				}, 1500);
+			});
+
+			function GetQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>学分认定申请</title>
+		<link rel="stylesheet" href="css/weui.min.css">
+		<link rel="stylesheet" href="css/jquery-weui.min.css">
+		<link rel="stylesheet" href="css/demos.css" />
+	</head>
+	<body ontouchstart  style="background-color: #F3F3F3;">
+			<div class="weui-cells weui-cells_form" style="margin-top: 60px;">
+		  <div class="weui-cell">
+		    <div class="weui-cell__bd">
+		      <p id="show" class="weui-textarea" rows="4" style="color:#000000;"></p>
+		    </div>
+		  </div>
+		</div>
+		 <div class="weui-flex" style="margin-top: 60px;">
+			  <div class="weui-flex__item">
+			  	<button id="apply" style="background-color:#1FA24A; color:#FFFFFF;width: 160px;"  type="submit" class="weui-btn weui-btn_primary" onclick="dialogBox()">学分申请(讲座)</button>
+			  </div>
+			  <div class="weui-flex__item">
+			  	<button id="apply2" style="background-color:#1FA24A; color:#FFFFFF;width: 160px;" type="submit" class="weui-btn weui-btn_primary" onclick="dialogBox2()">学分申请(演出)</button>
+			  </div>
+		  </div>
+	</body>
+</html>
+
+<script type="text/javascript" src="../lib/jquery/jquery.min.js" ></script>
+<script type="text/javascript" src="js/jquery-weui.min.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript" src="js/share.js" ></script>
+<script>
+    var applyScore = 0;
+    var applyScore2= 0;
+        $(function () {
+            $.ajax({
+                type:"post",
+                url: "/student/scoreApply/read",
+                data: {stuId: GetQueryString("id")},
+                async:true,
+                success:function(result){
+                    var start = new Date(result.data.scoreCycleStartTime);
+                    var end = new Date(result.data.scoreCycleEndTime);
+
+                    var startDate = (start.getFullYear()) + "年" + (start.getMonth()+1) + "月" +(start.getDate())+"日";
+                    var endDate = (end.getFullYear()) + "年" + (end.getMonth()+1) + "月" +(end.getDate())+"日"
+
+					if(result.data.total>= result.data.scoreApplySetValue1 && result.data.total<result.data.scoreApplySetValue3 ){
+						applyScore = 1;
+					}else if(result.data.total > result.data.scoreApplySetValue3){
+					    applyScore = 2;
+					}else{
+					    applyScore = 0;
+					}
+					if(result.data.total2>= result.data.scoreApplySetValue2 && result.data.total2<result.data.scoreApplySetValue4 ){
+						applyScore2 = 1;
+					}else if(result.data.total2 > result.data.scoreApplySetValue4){
+					    applyScore2 = 2;
+					}else{
+					    applyScore2 = 0;
+					}
+                    var html = "<p>在学分周期"+startDate+"至"+endDate+"：<br/>参加讲座次数"+result.data.total+"次，可以申请学分"+applyScore+"分;"+
+                    			"<br/>参加演出次数"+result.data.total2+"次，可以申请学分"+applyScore2+"学分";
+                    $("#show").html(html);
+                    if(result.data.total == 0){
+                    	$('#apply').addClass('weui-btn_disabled');
+                    	$('#apply').attr('disabled',"true");
+                    }
+                    if(result.data.total2 == 0){
+                    	$('#apply2').addClass('weui-btn_disabled');
+                    	$('#apply2').attr('disabled',"true");
+                    }
+                }
+            });
+        });
+
+    function GetQueryString(name)
+    {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+    }
+
+    function dialogBox()
+        {
+            var text = "不在申请时间内或已申请";
+            var applyPermission = 0;
+            var button = [
+                {
+                    text: "取消", className: "default", onClick: function () {
+                    console.log(1)
+                }
+                }];
+
+            //查询当前是否在申请时间内和是否已申请
+            $.ajax({
+                type:"post",
+                url: "/student/scoreApply/applyPermission",
+                data: {stuId: GetQueryString("id")},
+                async:true,
+                success:function(result){
+					if (result.data.id != null && result.data.isAffirm == "0"){
+                        applyPermission = 1;
+					    text = "请选择申请学分"
+					}
+					else{
+                        applyPermission = 0;
+					    text = "不在申请时间内或已申请"
+					}
+
+                    if(applyScore ==1 && applyPermission == 1){
+                        button = [
+                            {
+                                text:"申请1学分",onClick:function () {
+                                apply(1);
+                                console.log(1)
+                            }
+                            },
+                            {
+                                text: "取消", className: "default", onClick: function () {
+                                console.log(2)
+                            }
+                            }]
+                    }
+                    else if(applyScore ==2 && applyPermission == 1){
+                        button = [
+                            {
+                                text:"申请1学分",onClick:function () {
+                                apply(1);
+                                console.log(1)
+                            }
+                            },
+                            {
+                                text:"申请2学分",onClick:function () {
+                                apply(2);
+                                console.log(2)
+                            }
+                            },
+                            {
+                                text: "取消", className: "default", onClick: function () {
+                                console.log(3)
+                            }
+                            }]
+                    }
+                    else {
+                        button =[
+                            {
+                                text: "取消", className: "default", onClick: function () {
+                                console.log(1)
+                            }
+                            }
+                        ]
+                    }
+                    $.modal({
+                        title: "学分申请",
+                        text: text,
+                        buttons: button
+                    });
+                }
+            });
+
+        }
+        
+        
+        function dialogBox2()
+        {
+            var text = "不在申请时间内或已申请";
+            var applyPermission = 0;
+            var button = [
+                {
+                    text: "取消", className: "default", onClick: function () {
+                    console.log(1)
+                }
+                }];
+
+            //查询当前是否在申请时间内和是否已申请
+            $.ajax({
+                type:"post",
+                url: "/student/scoreApply/applyPermission2",
+                data: {stuId: GetQueryString("id")},
+                async:true,
+                success:function(result){
+					if (result.data.id != null && result.data.isAffirm2 == "0"){
+                        applyPermission = 1;
+					    text = "请选择申请学分"
+					}
+					else{
+                        applyPermission = 0;
+					    text = "不在申请时间内或已申请"
+					}
+
+                    if(applyScore2 ==1 && applyPermission == 1){
+                        button = [
+                            {
+                                text:"申请1学分",onClick:function () {
+                                apply2(1);
+                                console.log(1)
+                            }
+                            },
+                            {
+                                text: "取消", className: "default", onClick: function () {
+                                console.log(2)
+                            }
+                            }]
+                    }
+                    else if(applyScore2 ==2 && applyPermission == 1){
+                        button = [
+                            {
+                                text:"申请1学分",onClick:function () {
+                                apply2(1);
+                                console.log(1)
+                            }
+                            },
+                            {
+                                text:"申请2学分",onClick:function () {
+                                apply2(2);
+                                console.log(2)
+                            }
+                            },
+                            {
+                                text: "取消", className: "default", onClick: function () {
+                                console.log(3)
+                            }
+                            }]
+                    }
+                    else {
+                        button =[
+                            {
+                                text: "取消", className: "default", onClick: function () {
+                                console.log(1)
+                            }
+                            }
+                        ]
+                    }
+                    $.modal({
+                        title: "学分申请",
+                        text: text,
+                        buttons: button
+                    });
+                }
+            });
+
+        }
+
+        function apply(score) {
+			if(score == 1){
+                $.confirm("是否申请1学分", function() {
+                    $.ajax({
+                        type:"post",
+                        url: "/student/scoreApply/applyScore",
+                        data: {score:1,stuId: GetQueryString("id")},
+                        async:true,
+                        success:function(result){
+                        }
+                    });
+                }, function() {
+                    //点击取消后的回调函数
+                });
+			}
+            if(score == 2){
+                $.confirm("是否申请2学分", function() {
+                    $.ajax({
+                        type:"post",
+                        url: "/student/scoreApply/applyScore",
+                        data: {score:2,stuId: GetQueryString("id")},
+                        async:true,
+                        success:function(result){
+                        }
+                    });
+                }, function() {
+                    //点击取消后的回调函数
+                });
+            }
+        }
+        
+        function apply2(score2) {
+			$.confirm("是否申请"+score2+"学分", function() {
+                    $.ajax({
+                        type:"post",
+                        url: "/student/scoreApply/applyScore2",
+                        data: {score:score2,stuId: GetQueryString("id")},
+                        async:true,
+                        success:function(result){
+                        }
+                    });
+                }, function() {
+                    //点击取消后的回调函数
+	        });
+        }
+
+</script>

@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Fri Feb 03 16:35:00 CST 2017
+maven-jdeps-plugin-3.0.0.jar>alimaven=
+maven-jdeps-plugin-3.0.0.pom>alimaven=
+maven-jdeps-plugin-3.0.0.pom>publicMirror=
+maven-jdeps-plugin-3.0.0.jar>publicMirror=

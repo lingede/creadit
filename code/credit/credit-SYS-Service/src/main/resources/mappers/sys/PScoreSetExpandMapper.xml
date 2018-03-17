@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.castiel.dao.sys.PScoreSetExpandMapper">
+	<select id="testMapper"
+		resultMap="com.castiel.dao.generator.PScoreSetMapper.BaseResultMap">
+		select id_, SCORE_APPLY_ID, SCORE_APPLY_SET_VALUE1,
+		SCORE_APPLY_SET_VALUE2,
+		SCORE_APPLY_SET_VALUE3,
+		SCORE_AFFIRM_START_TIME, SCORE_AFFIRM_END_TIME,
+		SCORE_CYCLE_START_TIME, SCORE_CYCLE_END_TIME
+		from p_score_set
+	</select>
+
+	<select id="scycle" resultType="com.castiel.model.sys.PScoreSetBean">
+		SELECT p.SCORE_CYCLE_START_TIME
+		start,p.SCORE_CYCLE_END_TIME end FROM p_score_set p ORDER BY id_ DESC
+		LIMIT 1
+	</select>
+
+	<select id="queryByCurrentTime" resultType="java.lang.String">
+		SELECT id_ 
+		FROM p_score_set 
+		WHERE id_=(SELECT id_ FROM p_score_set ORDER BY id_ DESC LIMIT 1) 
+		AND SCORE_AFFIRM_START_TIME &lt;= #{currentTime}
+		AND
+		SCORE_AFFIRM_END_TIME &gt;= #{currentTime}
+	</select>
+
+	<select id="queryNewestData" resultType="com.castiel.model.generator.PScoreSetApllyUnion">
+		select
+		ps.SCORE_AFFIRM_START_TIME as
+		'scoreAffirmStartTime',ps.SCORE_AFFIRM_END_TIME as
+		'scoreAffirmEndTime', psa.SCORE_APPLY_START_TIME as
+		'scoreApplyStartTime',psa.SCORE_APPLY_END_TIME as
+		'scoreApplyEndTime',ps.SCORE_APPLY_SET_VALUE1 as
+		'scoreApplySetValue1',ps.SCORE_APPLY_SET_VALUE3 as
+		'scoreApplySetValue3',ps.SCORE_APPLY_SET_VALUE2 as
+		'scoreApplySetValue2',ps.SCORE_APPLY_SET_VALUE4 as
+		'scoreApplySetValue4',ps.SCORE_CYCLE_START_TIME as
+		'scoreCycleStartTime',ps.SCORE_CYCLE_END_TIME as 'scoreCycleEndTime'
+		from p_score_set ps
+		INNER JOIN p_score_apply_set psa
+		on
+		ps.SCORE_APPLY_ID = psa.SCORE_APPLY_ID
+		where ps.id_ =
+		(
+		select MAX(id_)
+		from p_score_set
+		)
+	</select>
+
+	<select id="queryScoreApplySetValue1" resultType="java.lang.Integer">
+		SELECT
+		SCORE_APPLY_SET_VALUE1
+		FROM p_score_set
+		WHERE id_ =(select MAX(id_) from
+		p_score_set)
+	</select>
+
+	<select id="queryScoreApplySetValue3" resultType="java.lang.Integer">
+		SELECT
+		SCORE_APPLY_SET_VALUE3
+		FROM p_score_set
+		WHERE id_ =(select MAX(id_) from
+		p_score_set)
+	</select>
+	<select id="queryScoreApplySetValue2" resultType="java.lang.Integer">
+		SELECT
+		SCORE_APPLY_SET_VALUE2
+		FROM p_score_set
+		WHERE id_ =(select MAX(id_) from
+		p_score_set)
+	</select>
+
+	<select id="queryScoreApplySetValue4" resultType="java.lang.Integer">
+		SELECT
+		SCORE_APPLY_SET_VALUE4
+		FROM p_score_set
+		WHERE id_ =(select MAX(id_) from
+		p_score_set)
+	</select>
+</mapper>

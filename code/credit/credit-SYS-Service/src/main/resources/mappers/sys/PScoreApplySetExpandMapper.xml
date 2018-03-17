@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.castiel.dao.sys.PScoreApplySetExpandMapper">
+	 <select id="queryByScoreApplayTime" resultType="java.lang.String">
+		SELECT *
+		FROM p_score_apply_set
+		WHERE SCORE_APPLY_START_TIME &lt;= #{currentTime}
+		AND SCORE_APPLY_END_TIME &gt;= #{currentTime}
+		ORDER BY SCORE_APPLY_ID DESC LIMIT 1
+	</select>
+	
+
+</mapper>

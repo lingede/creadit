@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>详情</title>
+		<link rel="stylesheet" href="css/weui.min.css">
+		<link rel="stylesheet" href="css/jquery-weui.min.css">
+		<link rel="stylesheet" href="css/demos.css" />
+	</head>
+
+	<body ontouchstart  style="background-color: #F3F3F3;">
+		 <div class="weui-form-preview"  style="height: 350px;margin-top: 60px;">
+		  <div class="weui-form-preview__bd"  style="text-align: left;color: #000000;font-size: 16px;">
+		     <p id="actname"></p>
+		     <p>报名时间：<span id="enrolstart"></span>至<span id="enrolend"></span></p>
+		     <p>活动时间：<span id="actstart"></span>至<span id="actend"></span></p>
+		     <p>活动内容：<span id="content"></span></p>
+		     <p>活动地点: <span id="place"></span></p>
+		  </div>
+		  <div style="margin-top: 70px;">
+			<button onclick="enroll()" style="background-color:#1FA24A; color:#FFFFFF;margin-top: 60px; width: 260px;" type="submit" id="enroll" class="weui-btn weui-btn_primary" href="javascript:">点击报名</button>
+		  </div>
+		</div>
+		<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-weui.min.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+		<script type="text/javascript" src="js/share.js"></script>
+		<script>
+			var stuid = GetQueryString("id");
+			var actid = GetQueryString("actid");
+			$(function() {
+				$.ajax({
+					type: "get",
+					url: "/student/act/actinfo?actid="+actid,
+					async: true,
+					success: function(result) {
+						$('#actname').text(result.data.actName);
+						$('#enrolstart').text(result.data.actEnrolStartTime);
+						$('#enrolend').text(result.data.actEnrolEndTime);
+						$('#actstart').text(result.data.actStartTime);
+						$('#actend').text(result.data.actEndTime);
+						$('#content').text(result.data.actContent);
+						$('#place').text(result.data.actPlace);
+					},
+				});
+			});
+
+			function GetQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+
+			function enroll() {
+				$.ajax({
+					type:"post",
+					url:"/student/act/enroll",
+					async:true,
+					data:{
+						'actid':actid,
+						'stuid':stuid
+					},
+					success:function(result){
+						if(result.data == 202){
+							$.toast("不在报名时间内", "cancel");
+						}else if(result.data == 201){
+							$.toast("已报名，请勿重复提交", "cancel");
+						}else if(result.data == 200){
+							$.toast("报名成功");
+						}else if(result.data == 203){
+							$.toast("报名人数超限", "cancel");
+						}
+						setTimeout(function() {
+							window.history.go(-1).reload();
+						}, 2000);	
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!-- toaster directive -->
+<toaster-container
+	toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+<!-- / toaster directive -->
+
+<!-- 导航条 -->
+<div class="bg-white bread-crumb">
+	<ul class="breadcrumb b-a m-b-n-xs lter b-b wrapper-md">
+		<li><a ui-sref="main"><i class="fa fa-home"></i> 首页</a>
+		</li>
+		<li><a ui-sref="main.wechat.menu.list">菜单管理</a>
+		</li>
+		<li class="active" ng-bind="title"></li>
+	</ul>
+</div>
+
+<!-- 内容区域 -->
+<div class="wrapper-md content">
+	<div class="panel panel-default">
+		<!-- 头部 -->
+		<div class="panel-heading font-bold">
+			{{title}} <a
+				class="btn btn-sm btn-icon btn-rounded btn-default pull-right m-t-n-xs"
+				ui-sref="main.wechat.menu.list"><i
+				class="text-md fa fa-times text-muted"></i>
+			</a>
+		</div>
+		<!--表单-->
+		<div class="panel-body">
+			<form class="form-horizontal" name="wechat_menu_form">
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="name">
+						<span class="text-danger wrapper-sm">*</span>菜单名称</label>
+					<div class="col-sm-6">
+						<input type="text" ng-readonly="record.locked==1" class="form-control" name="name"
+							id="name" placeholder="请输入微信自定义菜单名称..." ng-model="record.name">
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="type">
+						<span class="text-danger wrapper-sm">*</span>菜单类别</label>
+					<div class="col-sm-6">
+						<div class="selects">
+							<select ng-readonly="record.locked==1" class="form-control" name="type" id="type"
+								ng-model="record.type" onchange="typeChange();"
+								ng-options="item.value as item.type for item in [{type:'--请选择菜单类型--',value:null},{type:'点击推事件',value:'click'},{type:'跳转URL',value:'view'},
+								{type:'扫码推事件',value:'scancode_push'},{type:'扫码推事件且弹出“消息接收中”提示框',value:'scancode_waitmsg'},{type:'弹出系统拍照发图',value:'pic_sysphoto'},{type:'弹出拍照或者相册发图',value:'pic_photo_or_album'},
+								{type:'弹出微信相册发图器',value:'pic_weixin'},{type:'弹出地理位置选择器',value:'location_select'},{type:'下发消息（除文本消息）',value:'media_id'},{type:'跳转图文消息URL',value:'view_limited'},{type:'往期回顾',value:'history'}]">
+							</select>
+						</div>
+						<span class="help-block m-b-none"></span>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="parentId">
+						<span class="text-danger wrapper-sm">*</span>上级菜单</label>
+					<div class="col-sm-6">
+						<div class="selects">
+							<select class="form-control" name="parentId" id="parentId"
+								ng-model="record.parentId"
+								ng-options="wechatMenu.id as wechatMenu.name group by wechatMenu.parentMenu for wechatMenu in fatherWechatMenus"></select>
+						</div>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="key">
+						<span class="text-danger wrapper-sm"></span>菜单KEY值</label>
+					<div class="col-sm-6">
+						<input ng-readonly="record.locked==1" type="text" class="form-control"
+							name="key" id="key" placeholder="请输入菜单key值"
+							ng-model="record.key">
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="url">
+						<span class="text-danger wrapper-sm"></span>菜单URL</label>
+					<div class="col-sm-6">
+						<input ng-readonly="record.locked==1" type="text" class="form-control"
+							name="url" id="url" placeholder="请输入菜单url"
+							ng-model="record.url">
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="mediaId">
+						<span class="text-danger wrapper-sm"></span>media_id</label>
+					<div class="col-sm-6">
+						<input ng-readonly="record.locked==1" type="text" class="form-control"
+							name="mediaId" id="mediaId" placeholder="请输入media_id"
+							ng-model="record.mediaId">
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+				<div class="form-group">
+					<label class="col-lg-2 col-sm-3 control-label" for="sort">排序</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="sort" id="sort"
+							placeholder="请输入排序..." ng-model="record.sort"> <span
+							class="help-block m-b-none"></span>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+				<!--btn-->
+				<div class="form-group">
+					<div class="col-sm-6 col-sm-offset-2">
+						<button type="reset" class="btn btn-default w-xs">重置</button>
+						<button type="submit" class="btn btn-info w-xs m-l-xl"
+							ng-disabled="isDisabled">保存</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

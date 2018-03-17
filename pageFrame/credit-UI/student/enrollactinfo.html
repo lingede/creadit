@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>参加情况</title>
+		<link rel="stylesheet" href="css/weui.min.css">
+		<link rel="stylesheet" href="css/jquery-weui.min.css">
+		<link rel="stylesheet" href="css/demos.css" />
+	</head>
+
+	<body ontouchstart style="background-color: #F3F3F3;">
+		<div class="weui-form-preview__bd" style="text-align: left;color: #000000;font-size: 16px;">
+			<p id="actname"></p>
+			<p>报名时间：<span id="enrolstart"></span>至<span id="enrolend"></span></p>
+			<p>活动时间：<span id="actstart"></span>至<span id="actend"></span></p>
+			<p>活动内容：<span id="content"></span></p>
+			<p>活动地点: <span id="place"></span></p>
+		</div>
+		<div class="weui-btn weui-btn_primary" style="margin-top: 60px;width:260px;background-color:#1FA24A; color:#FFFFFF;"></div>
+		<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-weui.min.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+		<script type="text/javascript" src="js/share.js"></script>
+		<script>
+			var stuid = GetQueryString("id");
+			var actid = GetQueryString("actid");
+			var status = GetQueryString("status");
+			$(function() {
+				$.ajax({
+					type: "post",
+					url: "/student/enrollacts/info",
+					data: {
+						actId: actid,
+						status: status,
+						stuId: stuid
+					},
+					async: true,
+					success: function(result) {						
+						$('#actname').text(result.data.pBasicAct.actName);
+						$('#enrolstart').text(result.data.pBasicAct.actEnrolStartTime);
+						$('#enrolend').text(result.data.pBasicAct.actEnrolEndTime);
+						$('#actstart').text(result.data.pBasicAct.actStartTime);
+						$('#actend').text(result.data.pBasicAct.actEndTime);
+						$('#content').text(result.data.pBasicAct.actContent);
+						$('#place').text(result.data.pBasicAct.actPlace);
+						
+						if(result.data.status == "12") {
+							$('.weui-form-preview__bd').append('<p>活动结果: <span>'+result.data.message+'</span></p>');
+						}
+						if(result.data.status == "0") {
+							$(".weui-btn").text("重新报名");
+							$(".weui-btn").click(function() {
+								statusChange(1);
+							});
+						} else if(result.data.status == "10") {
+							$(".weui-btn").text("取消报名");
+							$(".weui-btn").click(function() {
+								statusChange(0);
+							});
+						} else {
+							$(".weui-btn").text("我知道了");
+							$(".weui-btn").click(function() {
+								window.history.go(-1);
+							});
+						}
+					},
+				});
+			});
+
+			function GetQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+
+			function statusChange(change) {
+				$.ajax({
+					type: "post",
+					url: "/student/enrollacts/enrollChange",
+					data: {
+						actId: actid,
+						stuId: stuid,
+						isenrol: change
+					},
+					async: true,
+					success: function(result) {
+						if(result.data == 200) {
+							$.toast("操作成功");
+						} else if(result.data == 203) {
+							$.toast("抱歉，人数已满", "forbidden");
+						}
+						setTimeout(function() {
+							window.history.go(-1).reload();
+						}, 2000);
+					},
+				});
+			}
+		</script>
+	</body>
+
+</html>

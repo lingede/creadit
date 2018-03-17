@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.castiel.dao.sys.AdministerFrontPageExpandMapper">
+
+	 <select id="selectStuInfo" resultType="com.castiel.model.generator.AdministerFrontPage" parameterType="String">
+	 	<!-- 
+		select stu.id_,stu.STU_NAME,act.DEPT_ID as DEPT_NAME,stu.STU_MAJOR,act.TOTAL,act.SCORE_VALUE,act.AFFIRM_SCORE,act.REVIEW_TIME,act.AFFIRM_TIME,
+		CASE act.SCORE_VALUE
+   		WHEN '1' THEN '是'
+   		WHEN '2' THEN '是'
+   		ELSE '否'
+		END as SCORE_GET
+		from p_act_round act
+		inner join p_basic_stu stu 
+		on act.STU_ID = stu.id_
+		<if test="dept !=null || dept == ''"> 
+			where act.DEPT_ID like CONCAT('%',#{dept},'%')
+		</if>
+		 -->
+		 SELECT
+			stu.id_,
+			stu.STU_NAME,
+			act.DEPT_ID AS DEPT_NAME,
+			stu.STU_MAJOR,
+			act.TOTAL,
+			act.TOTAL2,
+			act.SCORE_VALUE,
+			act.SCORE_VALUE2
+		FROM
+			p_act_round act
+			INNER JOIN p_basic_stu stu ON act.STU_ID = stu.id_
+		<if test="dept !=null || dept == ''"> 
+			where act.DEPT_ID like CONCAT('%',#{dept},'%')
+		</if>
+	 </select>
+	 
+	 <select id="getDeptInfoTotal" resultType="Integer" parameterType="String">
+	 	select COUNT(DISTINCT act.ACT_NAME)
+		from p_act_enrol pa
+		INNER JOIN p_basic_dept dep
+		on dep.id_ = pa.dept_id
+		INNER JOIN p_basic_act act
+		on act.id_ = pa.act_id
+		<if test="#{dept} !=null || #{dept} == ''"> 
+			where dep.DEPT_NO = #{dept} or dep.DEPT_NAME like CONCAT('%',#{dept},'%')
+		</if>
+	 </select>
+	 
+	 
+	 <select id="selectDeptInfo" parameterType="com.castiel.model.generator.AdminPageInfo" resultType="com.castiel.model.generator.AdminFrontPage2">
+	 	select DISTINCT dep.DEPT_NO,dep.DEPT_NAME,act.ACT_NAME,act.ACT_NO,act.ACT_START_TIME,act.ACT_END_TIME,act.id_
+		,(
+			select COUNT(*) from p_act_enrol pa1
+			WHERE pa1.act_id = pa.act_id
+		) as 'APPLY_NUMBER',
+		(
+			select COUNT(*) from p_card_flow card
+			where card.ACT_NAME = act.ACT_NAME
+		) as 'REALITY_NUMBER'
+		from p_act_enrol pa
+		INNER JOIN p_basic_dept dep
+		on dep.id_ = pa.dept_id
+		INNER JOIN p_basic_act act
+		on act.id_ = pa.act_id
+		<if test="#{dept} !=null || #{dept} == ''"> 
+			where dep.DEPT_NO = #{dept} or dep.DEPT_NAME like CONCAT('%',#{dept},'%')
+		</if>
+		ORDER BY #{OrderBy}
+		LIMIT #{startRow},#{PageSize}
+	 </select>
+	 
+	 <select id="selectAllDeptInfo" resultType="com.castiel.model.generator.AdminFrontPage2" parameterType="String">
+	 	select DISTINCT dep.DEPT_NO,dep.DEPT_NAME,act.ACT_NAME,act.ACT_NO,act.ACT_START_TIME,act.ACT_END_TIME,act.id_
+		,(
+			select COUNT(*) from p_act_enrol pa1
+			WHERE pa1.act_id = pa.act_id
+		) as 'APPLY_NUMBER',
+		(
+			select COUNT(*) from p_card_flow card
+			where card.ACT_NAME = act.ACT_NAME
+		) as 'REALITY_NUMBER'
+		from p_act_enrol pa
+		INNER JOIN p_basic_dept dep
+		on dep.id_ = pa.dept_id
+		INNER JOIN p_basic_act act
+		on act.id_ = pa.act_id
+		<if test="#{dept} !=null || #{dept} == ''"> 
+			where dep.DEPT_NO = #{dept} or dep.DEPT_NAME like CONCAT('%',#{dept},'%')
+		</if>
+	 </select>
+
+</mapper>

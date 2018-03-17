@@ -1,0 +1,226 @@
+<!-- toaster directive -->
+<toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+<!-- / toaster directive -->
+
+<!-- 导航条 -->
+<div class="bg-white bread-crumb">
+	<ul class="breadcrumb b-a m-b-n-xs lter b-b wrapper-md">
+		<li>
+			<a ui-sref="main"><i class="fa fa-home"></i> 首页</a>
+		</li>
+		<li>
+			<a ui-sref="main.platform.score.list">学分设置管理</a>
+		</li>
+		<li class="active" ng-bind="title"></li>
+	</ul>
+</div>
+
+<!-- 内容区域 -->
+<div class="wrapper-md content">
+	<div class="panel panel-default">
+		<!-- 头部 -->
+		<div class="panel-heading font-bold">{{title}}
+		</div>
+		<!--表单-->
+		<div class="panel-body">
+			<form class="form-horizontal" name="score_form">
+				<!--学分申请认定开始时间-->
+				<div class="form-group" ng-class="{ 'has-error' : score_form.score_apply_start_time.$invalid && !score_form.score_apply_start_time.$pristine }">
+					<label class="col-lg-2 col-sm-3 control-label" for="score_apply_start_time">
+                        <span class="text-danger wrapper-sm">*</span>学分申请认定开始时间:</label>
+					<div class="col-sm-6">
+						<input type="text" value="" id="score_apply_start_time" name="score_apply_start_time" class="form-control" ng-model="record.scoreApplyStartTime" required/>
+					</div>
+					<p ng-show="score_form.score_apply_start_time.$error.required && !score_form.score_apply_start_time.$pristine && score_form.score_apply_start_time.$invalid" class="help-block">必填项</p>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+
+				<!--学分申请认定结束时间-->
+				<div class="form-group" ng-class="{ 'has-error' : score_form.score_apply_complete_time.$invalid && !score_form.score_apply_complete_time.$pristine }">
+					<label class="col-lg-2 col-sm-3 control-label" for="score_apply_complete_time">
+                        <span class="text-danger wrapper-sm">*</span>学分申请认定结束时间:</label>
+					<div class="col-sm-6">
+						<input type="text" value="" id="score_apply_complete_time" name="score_apply_complete_time" class="form-control" ng-model="record.scoreApplyEndTime" required/>
+						<p ng-show="score_form.score_apply_complete_time.$error.required && !score_form.score_apply_complete_time.$pristine && score_form.score_apply_complete_time.$invalid" class="help-block">必填项</p>
+					</div>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+
+				<!-- 学分获得条件设置-->
+				<div class="row">
+					<div class="form-group">
+						<label class="col-lg-2 col-sm-3 control-label"><span class="text-danger wrapper-sm">*</span>学分获得条件设置:</label>
+					</div>
+					<div class="col-sm-9 col-sm-offset-3 col-lg-offset-3">
+						<ul class="nav nav-tabs" id="myTab">
+							<li>
+								<a href="#lecture" data-toggle="tab">讲座学分获得条件设置</a>
+							</li>
+							<li>
+								<a href="#performance" data-toggle="tab">表演学分获得条件设置</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane fade in" id="lecture">
+								<div class="form-group" ng-class="{ 'has-error' : score_form.scoreApplySetValue1.$invalid && !score_form.scoreApplySetValue1.$pristine }">
+									<div>
+										<label class="setting-label" for="scoreApplySetValue1">参加次数小于</label>
+										<input type="text" class="form-control condition-input col-sm-4" name="scoreApplySetValue1" id="scoreApplySetValue1" ng-model="record.scoreApplySetValue1" ng-pattern="/^\d{1,2}$/" required maxlength="2">
+										<label class="setting-label">次，没有学分</label>
+										<p ng-show="score_form.scoreApplySetValue1.$error.required && !score_form.scoreApplySetValue1.$pristine && score_form.scoreApplySetValue1.$invalid" class="help-block">必填项</p>
+										<p ng-show="score_form.scoreApplySetValue1.$error.pattern && !score_form.scoreApplySetValue1.$pristine && score_form.scoreApplySetValue1.$invalid" class="help-block">请填写0-99数字</p>
+									</div>
+								</div>
+								<div class="form-group" ng-class="{ 'has-error' : score_form.scoreApplySetValue3.$invalid && !score_form.scoreApplySetValue3.$pristine}">
+									<div>
+										<label class="setting-label" for="scoreApplySetValue3">参加次数大于</label>
+										<input type="text" class="form-control condition-input col-sm-4" name="scoreApplySetValue3" id="scoreApplySetValue3" ng-model="record.scoreApplySetValue3" required ng-pattern="/^\d{1,2}$/" maxlength="2">
+										<label class="setting-label" for="scoreApplySetValue3">次，获得2学分</label>
+										<p ng-show="score_form.scoreApplySetValue3.$error.required && !score_form.scoreApplySetValue3.$pristine && score_form.scoreApplySetValue3.$invalid" class="help-block">必填项</p>
+										<p ng-show="score_form.scoreApplySetValue3.$error.pattern && !score_form.scoreApplySetValue3.$pristine && score_form.scoreApplySetValue3.$invalid" class="help-block">请填写0-99数字</p>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="performance">
+								<div class="form-group" ng-class="{ 'has-error' : score_form.scoreApplySetValue2.$invalid && !score_form.scoreApplySetValue2.$pristine }">
+									<div>
+										<label class="setting-label">参加次数小于</label>
+										<input type="text" class="form-control condition-input col-sm-4" name="scoreApplySetValue2" id="scoreApplySetValue2" ng-model="record.scoreApplySetValue2" ng-pattern="/^\d{1,2}$/" required maxlength="2">
+										<label class="setting-label">次，没有学分</label>
+										<p ng-show="score_form.scoreApplySetValue2.$error.required && !score_form.scoreApplySetValue2.$pristine && score_form.scoreApplySetValue2.$invalid" class="help-block">必填项</p>
+										<p ng-show="score_form.scoreApplySetValue2.$error.pattern && !score_form.scoreApplySetValue2.$pristine && score_form.scoreApplySetValue2.$invalid" class="help-block">请填写0-99数字</p>
+									</div>
+								</div>
+								<div class="form-group" ng-class="{ 'has-error' : score_form.scoreApplySetValue4.$invalid && !score_form.scoreApplySetValue4.$pristine}">
+									<div>
+										<label class="setting-label" for="scoreApplySetValue4">参加次数大于</label>
+										<input type="text" class="form-control condition-input col-sm-4" name="scoreApplySetValue4" id="scoreApplySetValue4" ng-model="record.scoreApplySetValue4" required ng-pattern="/^\d{1,2}$/" maxlength="2">
+										<label class="setting-label" for="scoreApplySetValue4">次，获得2学分</label>
+										<p ng-show="score_form.scoreApplySetValue4.$error.required && !score_form.scoreApplySetValue4.$pristine && score_form.scoreApplySetValue4.$invalid" class="help-block">必填项</p>
+										<p ng-show="score_form.scoreApplySetValue4.$error.pattern && !score_form.scoreApplySetValue4.$pristine && score_form.scoreApplySetValue4.$invalid" class="help-block">请填写0-99数字</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+
+				<!--学分申请开始时间-->
+				<div class="form-group" ng-class="{ 'has-error' : score_form.score_start_time.$invalid && !score_form.score_start_time.$pristine }">
+					<label class="col-lg-2 col-sm-3 control-label" for="score_start_time">
+                        <span class="text-danger wrapper-sm">*</span>学分认定开始时间:</label>
+					<div class="col-sm-6">
+						<input type="text" value="" id="score_start_time" name="score_start_time" class="form-control" ng-model="record.scoreAffirmStartTime" required/>
+					</div>
+					<p ng-show="score_form.score_start_time.$error.required && !score_form.score_start_time.$pristine && score_form.score_start_time.$invalid" class="help-block">必填项</p>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+				<!--学分申请结束时间-->
+				<div class="form-group" ng-class="{ 'has-error' : score_form.score_complete_time.$invalid && !score_form.score_complete_time.$pristine }">
+					<label class="col-lg-2 col-sm-3 control-label" for="score_complete_time">
+                        <span class="text-danger wrapper-sm">*</span>学分认定结束时间:</label>
+					<div class="col-sm-6">
+						<input type="text" value="" id="score_complete_time" name="score_complete_time" class="form-control" ng-model="record.scoreAffirmEndTime" required/>
+					</div>
+					<p ng-show="score_form.score_complete_time.$error.required && !score_form.score_complete_time.$pristine && score_form.score_complete_time.$invalid" class="help-block">必填项</p>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+				<!--学分周期开始时间-->
+				<div class="form-group" ng-class="{ 'has-error' : score_form.scoreCycleStartTime.$invalid && !score_form.scoreCycleStartTime.$pristine }">
+					<label class="col-lg-2 col-sm-3 control-label" for="scoreCycleStartTime">
+                        <span class="text-danger wrapper-sm">*</span>学分周期始时间:</label>
+					<div class="col-sm-6">
+						<input type="text" value="" id="scoreCycleStartTime" name="scoreCycleStartTime" class="form-control" ng-model="record.scoreCycleStartTime" required ng-pattern="/^\d{1,2}-\d{1,2}$/" />
+					</div>
+					<p ng-show="score_form.scoreCycleStartTime.$error.required && !score_form.scoreCycleStartTime.$pristine && score_form.scoreCycleStartTime.$invalid" class="help-block">必填项</p>
+					<p ng-show="score_form.scoreCycleStartTime.$error.pattern && !score_form.scoreCycleStartTime.$pristine && score_form.scoreCycleStartTime.$invalid" class="help-block">请填写正确的格式</p>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+				<!--学分周期结束时间-->
+				<div class="form-group" ng-class="{ 'has-error' : score_form.scoreCycleEndTime.$invalid && !score_form.scoreCycleEndTime.$pristine }">
+					<label class="col-lg-2 col-sm-3 control-label" for="scoreCycleEndTime">
+                        <span class="text-danger wrapper-sm">*</span>学分周期结束时间:</label>
+					<div class="col-sm-6">
+						<input type="text" id="scoreCycleEndTime" name="scoreCycleEndTime" class="form-control" ng-model="record.scoreCycleEndTime" required ng-pattern="/^\d{1,2}-\d{1,2}$/" />
+					</div>
+					<p ng-show="score_form.scoreCycleEndTime.$error.required && !score_form.scoreCycleEndTime.$pristine && score_form.scoreCycleEndTime.$invalid" class="help-block">必填项</p>
+					<p ng-show="score_form.scoreCycleEndTime.$error.pattern && !score_form.scoreCycleEndTime.$pristine && score_form.scoreCycleEndTime.$invalid" class="help-block">请填写正确的格式</p>
+				</div>
+				<div class="line line-dashed b-b line-lg pull-in"></div>
+				<!--btn-->
+				<div class="form-group">
+					<div class="col-sm-6 col-sm-offset-2">
+						<button type="reset" class="btn btn-default w-xs">重置</button>
+						<button type="button" class="btn btn-info w-xs m-l-xl" ng-click="save()" ng-disabled="score_form.$invalid">保存</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!--设置Input样式-->
+<style>
+	.condition-input {
+		width: 30%;
+	}
+	
+	.setting-label {
+		float: left;
+		width: 7em;
+		margin-left: 1em;
+	}
+	
+	.setting-label2 {
+		float: left;
+		width: 9em;
+		margin-left: 1em;
+	}
+</style>
+
+<!--设置datetimepicker-->
+<script>
+	$('#score_apply_start_time').datetimepicker({
+		minView: 'month',
+		format: 'yyyy-mm-dd',
+		autoclose: true,
+		language: 'zh-CN',
+		startDate: new Date(2013, 10, 27), //开始时间，在这时间之前都不可选
+		todayBtn: true
+	});
+
+	$('#score_apply_complete_time').datetimepicker({
+		minView: 'month',
+		format: 'yyyy-mm-dd',
+		autoclose: true,
+		language: 'zh-CN',
+		todayBtn: true
+	});
+
+	$('#score_start_time').datetimepicker({
+		minView: 'month',
+		format: 'yyyy-mm-dd',
+		autoclose: true,
+		language: 'zh-CN',
+		todayBtn: true
+	});
+
+	$('#score_complete_time').datetimepicker({
+		minView: 'month',
+		format: 'yyyy-mm-dd',
+		autoclose: true,
+		language: 'zh-CN',
+		todayBtn: true
+	});
+</script>
+<script>
+	$(function () {
+      $('#myTab li:eq(0) a').tab('show');
+   });
+	$('#myTab a').click(function(e) {
+		e.preventDefault()
+		$(this).tab('show')
+	});
+</script>

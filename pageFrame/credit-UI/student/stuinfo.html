@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>个人信息</title>
+		<link rel="stylesheet" href="css/weui.min.css">
+		<link rel="stylesheet" href="css/jquery-weui.min.css">
+		<link rel="stylesheet" href="css/demos.css" />
+		<link rel="stylesheet" href="css/jq22.css">
+	</head>
+
+	<body ontouchstart  style="background-color: #F3F3F3;">
+		<div class="weui-cells weui-cells_form"  style="margin-top: 60px;">
+			<div class="weui-cell"  style="height: 45px;border-bottom: 1px solid #F3F3F3;">
+				<div class="weui-cell__hd">
+					<label class="weui-label">姓名</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="text" id="stuinfo" name="stuinfo" readonly="true">
+				</div>
+			</div>
+			<div class="weui-cell"  style="height: 45px;border-bottom: 1px solid #F3F3F3;">
+				<div class="weui-cell__hd">
+					<label class="weui-label">学号</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="tel" id="input_id" readonly="true">
+				</div>
+			</div>
+			<div class="weui-cell"  style="height: 45px;border-bottom: 1px solid #F3F3F3;">
+				<div class="weui-cell__hd">
+					<label class="weui-label">学院</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="text" id="stuDept"  readonly="true">
+				</div>
+			</div>
+			<div class="weui-cell"  style="height: 45px;border-bottom: 1px solid #F3F3F3;">
+				<div class="weui-cell__hd">
+					<label class="weui-label">类别</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="text" id="select2">
+				</div>
+			</div>
+			<div class="weui-cell" style="height: 45px;border-bottom: 1px solid #F3F3F3;">
+				<div class="weui-cell__hd">
+					<label class="weui-label">联系方式</label>
+				</div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="tel" placeholder="请输入联系方式" id="input_phone" />
+				</div>
+			</div>
+			<div style="margin-top: 60px;">
+				<a href="javascript:;" class="weui-btn weui-btn_primary" id="btnSave" style="background-color:#1FA24A; color:#FFFFFF;margin-top: 60px; width: 260px;">保存</a>
+			</div>
+		</div>
+		<input type="hidden" id="id_" />
+		<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+		<script src="js/jquery-weui.min.js" type="text/javascript"></script>
+		<script src="js/jq22.js" type="text/javascript"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+		<script type="text/javascript" src="js/share.js" ></script>
+		<script>
+			$(function() {
+				$("#select2").select({
+					title: "选择类别",
+					items: [{
+						title: "本科生",
+						value: 1,
+					}, {
+						title: "研究生",
+						value: 2,
+					}, {
+						title: "博士生",
+						value: 3,
+					},{
+						title: "教职工",
+						value: 4,
+					}]
+				});
+				var stuid = GetQueryString("id");
+				$('#input_id').val(stuid);
+				$.ajax({
+					type: "get",
+					url: "/student/stuinfo?id=" + stuid,
+					async: true,
+					success: function(result) {
+						$('#stuinfo').val(result.data.stuName);
+						$('#input_phone').val(result.data.stuPhone);
+						$('#stuDept').val(result.data.deptName);
+						$('#id_').val(result.data.id);
+						if(result.data.stuType == 1) {
+							$("#select2").val("本科生");
+							$("#select2").data("values", 1)
+						} else if(result.data.stuType == 2) {
+							$("#select2").val("研究生");
+							$("#select2").data("values", 2)
+						} else if(result.data.stuType == 3) {
+							$("#select2").val("博士生");
+							$("#select2").data("values", 3)
+						}else if(result.data.stuType == 4) {
+							$("#select2").val("教职工");
+							$("#select2").data("values", 4)
+						}
+					}
+				});
+				$("#btnSave").click(function() {
+					$.showLoading();
+					$.ajax({
+						type: "post",
+						url: "/student/DataSave",
+						async: true,
+						data: {
+							stuName: $("#stuinfo").val(),
+							stuType: $("#select2").data("values"),
+							stuPhone: $("#input_phone").val(),
+							id: $("#id_").val()
+						},
+						success: function(result) {
+							$.hideLoading();
+							$.toast("操作成功", function() {
+								console.log('close');
+							});
+						},
+						error: function(result) {
+							$.toast("操作失败", "forbidden");
+						}
+					});
+				});
+			});
+
+			function GetQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+		</script>
+	</body>
+
+</html>

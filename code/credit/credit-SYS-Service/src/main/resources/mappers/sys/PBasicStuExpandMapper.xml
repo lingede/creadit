@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.castiel.dao.sys.PBasicStuExpandMapper">
+	<select id="query" parameterType="java.util.Map" resultType="java.lang.String">
+		select id_ from p_basic_stu where 1=1
+		<if test="keyword != null">
+			and (STU_NAME like CONCAT('%',#{keyword},'%')) or (id_
+			like CONCAT('%',#{keyword},'%'))
+		</if>
+	</select>
+	<select id="searchStuNameByStuId" resultType="java.lang.String">
+		select STU_NAME
+		FROM p_basic_stu
+		WHERE id_ = #{stuId}
+	</select>
+	<delete id="deletePBasicStusByStuId" parameterType="java.lang.String">
+		delete
+		from
+		p_basic_stu where id_=#{stuId}
+	</delete>
+
+	<select id="getStuTypeById" resultType="int">
+		select STU_TYPE
+		FROM
+		p_basic_stu
+		WHERE id_ = #{stuId}
+	</select>
+	<select id="getStuById" parameterType="java.lang.String" resultType="com.castiel.model.sys.PBasicStuBean">
+		SELECT
+			p.id_ id,
+			p.STU_NAME stuName,
+			d.DEPT_NAME deptName,
+			p.STU_TYPE stuType,
+			p.STU_MAJOR stuMajor,
+			p.STU_PHONE stuPhone 
+		FROM
+			p_basic_stu p,
+			p_basic_dept d 
+		WHERE
+			p.DEPT_ID = d.id_ 
+			AND p.id_ = #{stuId}
+	</select>
+	<select id="getDeptNameByStuId" parameterType="java.lang.String" resultType="java.lang.String">
+		SELECT
+			d.DEPT_NAME deptName
+		FROM
+			p_basic_stu p,
+			p_basic_dept d 
+		WHERE
+			p.DEPT_ID = d.id_ 
+			AND p.id_ = #{stuId}
+	</select>
+</mapper>

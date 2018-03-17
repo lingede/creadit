@@ -1,0 +1,1301 @@
+STATUS | wrapper  | 2016/04/29 17:48:03 | --> Wrapper Started as Console
+STATUS | wrapper  | 2016/04/29 17:48:04 | Launching a JVM...
+INFO   | jvm 1    | 2016/04/29 17:48:04 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2016/04/29 17:48:04 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2016/04/29 17:48:04 | 
+INFO   | jvm 1    | 2016/04/29 17:48:04 | Java Runtime: Oracle Corporation 1.8.0_60 D:\tools\java\jre1.8.60
+INFO   | jvm 1    | 2016/04/29 17:48:04 |   Heap sizes: current=125952k  free=115966k  max=932352k
+INFO   | jvm 1    | 2016/04/29 17:48:04 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=YV3vsimZith6zPpq -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=7860 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2016/04/29 17:48:04 | Extensions classpath:
+INFO   | jvm 1    | 2016/04/29 17:48:04 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2016/04/29 17:48:04 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2016/04/29 17:48:04 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2016/04/29 17:48:04 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2016/04/29 17:48:04 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2016/04/29 17:48:04 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2016/04/29 17:48:05 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@39f07168: startup date [Fri Apr 29 17:48:05 CST 2016]; root of context hierarchy
+INFO   | jvm 1    | 2016/04/29 17:48:05 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[D:\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2016/04/29 17:48:05 |  INFO | PListStore:[D:\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:xsit-PC-52104-1461923285899-0:1) is starting
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | Listening for connections at: tcp://xsit-PC:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | Listening for connections at: amqp://xsit-PC:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | Listening for connections at: stomp://xsit-PC:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | Listening for connections at: mqtt://xsit-PC:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@3ee06740{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | Listening for connections at ws://xsit-PC:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | Connector ws started
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:xsit-PC-52104-1461923285899-0:1) started
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2016/04/29 17:48:06 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2016/04/29 17:48:07 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2016/04/29 17:48:07 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+STATUS | wrapper  | 2017/08/03 15:16:03 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/03 15:16:04 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/03 15:16:04 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/03 15:16:04 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/03 15:16:04 | 
+INFO   | jvm 1    | 2017/08/03 15:16:04 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/03 15:16:04 |   Heap sizes: current=125952k  free=117291k  max=932352k
+INFO   | jvm 1    | 2017/08/03 15:16:04 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=5xRfvtK8QPHVjVnt -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=16732 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/03 15:16:04 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/03 15:16:04 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/03 15:16:04 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/03 15:16:04 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/03 15:16:04 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/03 15:16:04 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/03 15:16:05 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/03 15:16:05 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@5c2a3ec7: startup date [Thu Aug 03 15:16:05 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/03 15:16:05 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  INFO | Recovering from the journal @1:61957
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  INFO | Recovery replayed 208 operations from the journal in 0.034 seconds.
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-22983-1501744566543-0:1) is starting
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/03 15:16:06 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@1369493f{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/03 15:16:07 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 15:16:07 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/03 15:16:07 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-22983-1501744566543-0:1) started
+INFO   | jvm 1    | 2017/08/03 15:16:07 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/03 15:16:07 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/03 15:16:07 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/03 15:16:07 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/03 15:16:07 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/03 15:16:07 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/03 15:16:08 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/03 15:28:02 |  WARN | Transport Connection to: tcp://127.0.0.1:24133 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/03 15:41:08 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/03 15:41:09 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/03 15:41:17 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/03 15:41:17 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/03 15:41:17 | 
+INFO   | jvm 1    | 2017/08/03 15:41:17 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/03 15:41:17 |   Heap sizes: current=125952k  free=117289k  max=932352k
+INFO   | jvm 1    | 2017/08/03 15:41:17 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=Dm_r9YOxZ417AOjV -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=8948 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/03 15:41:17 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/03 15:41:17 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/03 15:41:17 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/03 15:41:17 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/03 15:41:17 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/03 15:41:17 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/03 15:41:50 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/03 15:41:51 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@69f196c3: startup date [Thu Aug 03 15:41:51 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/03 15:42:56 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/03 15:43:24 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/03 15:43:24 |  INFO | Recovering from the journal @1:115847
+INFO   | jvm 1    | 2017/08/03 15:43:24 |  INFO | Recovery replayed 204 operations from the journal in 0.321 seconds.
+INFO   | jvm 1    | 2017/08/03 15:43:24 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/03 15:43:25 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1407-1501746204608-0:1) is starting
+INFO   | jvm 1    | 2017/08/03 15:43:25 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 15:43:25 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/03 15:43:25 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 15:43:25 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/03 15:43:25 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 15:43:25 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/03 15:43:25 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 15:43:25 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/03 15:43:26 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@89b05be{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/03 15:43:28 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 15:43:28 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/03 15:43:28 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1407-1501746204608-0:1) started
+INFO   | jvm 1    | 2017/08/03 15:43:28 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/03 15:43:31 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/03 15:43:32 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/03 15:43:32 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/03 15:43:33 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/03 15:43:36 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/03 15:43:36 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/03 15:54:59 |  WARN | Transport Connection to: tcp://127.0.0.1:1565 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/03 16:00:07 |  WARN | Transport Connection to: tcp://127.0.0.1:3538 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/03 16:00:43 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/03 16:00:43 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/03 16:00:44 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/03 16:00:44 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/03 16:00:44 | 
+INFO   | jvm 1    | 2017/08/03 16:00:44 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/03 16:00:44 |   Heap sizes: current=125952k  free=117298k  max=932352k
+INFO   | jvm 1    | 2017/08/03 16:00:44 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=suAg9BLRaispB9Pb -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=10196 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/03 16:00:44 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/03 16:00:44 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/03 16:00:44 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/03 16:00:44 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/03 16:00:44 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/03 16:00:44 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/03 16:00:44 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/03 16:00:44 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@81b082d: startup date [Thu Aug 03 16:00:44 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/03 16:00:45 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/03 16:00:47 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/03 16:00:47 |  INFO | Recovering from the journal @1:168729
+INFO   | jvm 1    | 2017/08/03 16:00:47 |  INFO | Recovery replayed 199 operations from the journal in 0.028 seconds.
+INFO   | jvm 1    | 2017/08/03 16:00:47 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/03 16:00:47 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-3690-1501747247479-0:1) is starting
+INFO   | jvm 1    | 2017/08/03 16:00:47 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 16:00:47 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/03 16:00:47 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 16:00:47 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/03 16:00:47 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 16:00:47 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/03 16:00:47 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 16:00:47 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/03 16:00:48 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2d71edf8{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/03 16:00:48 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 16:00:48 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/03 16:00:48 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-3690-1501747247479-0:1) started
+INFO   | jvm 1    | 2017/08/03 16:00:48 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/03 16:00:48 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/03 16:00:48 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/03 16:00:48 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/03 16:00:49 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/03 16:00:49 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/03 16:00:49 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/03 16:03:57 |  WARN | Transport Connection to: tcp://127.0.0.1:3821 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/03 16:10:44 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/03 16:10:46 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/03 16:11:05 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/03 16:11:05 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/03 16:11:05 | 
+INFO   | jvm 1    | 2017/08/03 16:11:06 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/03 16:11:06 |   Heap sizes: current=125952k  free=117289k  max=932352k
+INFO   | jvm 1    | 2017/08/03 16:11:06 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=Yyhadu3WUNABuh29 -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=7644 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/03 16:11:06 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/03 16:11:06 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/03 16:11:06 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/03 16:11:06 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/03 16:11:06 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/03 16:11:06 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/03 16:11:22 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/03 16:11:23 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@6d8286b: startup date [Thu Aug 03 16:11:23 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/03 16:11:36 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/03 16:12:03 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/03 16:12:04 |  INFO | Recovering from the journal @1:220351
+INFO   | jvm 1    | 2017/08/03 16:12:04 |  INFO | Recovery replayed 37 operations from the journal in 0.13 seconds.
+INFO   | jvm 1    | 2017/08/03 16:12:04 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/03 16:12:05 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1392-1501747924779-0:1) is starting
+INFO   | jvm 1    | 2017/08/03 16:12:05 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 16:12:05 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/03 16:12:05 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 16:12:05 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/03 16:12:05 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 16:12:05 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/03 16:12:05 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 16:12:05 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/03 16:12:07 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@5c2bf20f{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/03 16:12:07 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/03 16:12:07 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/03 16:12:07 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1392-1501747924779-0:1) started
+INFO   | jvm 1    | 2017/08/03 16:12:07 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/03 16:12:11 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/03 16:12:12 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/03 16:12:12 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/03 16:12:13 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/03 16:12:16 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/03 16:12:17 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/03 16:26:27 |  WARN | Transport Connection to: tcp://127.0.0.1:2457 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/03 16:37:13 |  WARN | Transport Connection to: tcp://127.0.0.1:3529 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/03 16:56:52 |  WARN | Transport Connection to: tcp://127.0.0.1:5160 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/03 17:02:14 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/03 17:02:15 | Launching a JVM...
+ERROR  | wrapper  | 2017/08/03 17:02:44 | Startup failed: Timed out waiting for a signal from the JVM.
+ERROR  | wrapper  | 2017/08/03 17:02:44 | JVM did not exit on request, terminated
+STATUS | wrapper  | 2017/08/03 17:02:49 | Launching a JVM...
+INFO   | jvm 2    | 2017/08/03 17:03:01 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 2    | 2017/08/03 17:03:01 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 2    | 2017/08/03 17:03:01 | 
+INFO   | jvm 2    | 2017/08/03 17:03:01 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 2    | 2017/08/03 17:03:01 |   Heap sizes: current=125952k  free=117298k  max=932352k
+INFO   | jvm 2    | 2017/08/03 17:03:01 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=2A6TE8HjZ55twjZD -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=6380 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=2
+INFO   | jvm 2    | 2017/08/03 17:03:01 | Extensions classpath:
+INFO   | jvm 2    | 2017/08/03 17:03:01 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 2    | 2017/08/03 17:03:01 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 2    | 2017/08/03 17:03:01 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 2    | 2017/08/03 17:03:01 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 2    | 2017/08/03 17:03:01 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 2    | 2017/08/03 17:03:44 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 2    | 2017/08/03 17:03:45 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@6656a8d6: startup date [Thu Aug 03 17:03:45 CST 2017]; root of context hierarchy
+INFO   | jvm 2    | 2017/08/03 17:04:20 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 2    | 2017/08/03 17:05:19 |  INFO | KahaDB is version 6
+INFO   | jvm 2    | 2017/08/03 17:05:20 |  INFO | Recovering from the journal @1:231149
+INFO   | jvm 2    | 2017/08/03 17:05:20 |  INFO | Recovery replayed 535 operations from the journal in 0.726 seconds.
+INFO   | jvm 2    | 2017/08/03 17:05:20 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 2    | 2017/08/03 17:05:20 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1361-1501751120329-0:1) is starting
+INFO   | jvm 2    | 2017/08/03 17:05:21 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 2    | 2017/08/03 17:05:21 |  INFO | Connector openwire started
+INFO   | jvm 2    | 2017/08/03 17:05:21 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 2    | 2017/08/03 17:05:21 |  INFO | Connector amqp started
+INFO   | jvm 2    | 2017/08/03 17:05:21 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 2    | 2017/08/03 17:05:21 |  INFO | Connector stomp started
+INFO   | jvm 2    | 2017/08/03 17:05:21 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 2    | 2017/08/03 17:05:21 |  INFO | Connector mqtt started
+INFO   | jvm 2    | 2017/08/03 17:05:22 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@22e88599{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 2    | 2017/08/03 17:05:24 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 2    | 2017/08/03 17:05:24 |  INFO | Connector ws started
+INFO   | jvm 2    | 2017/08/03 17:05:24 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1361-1501751120329-0:1) started
+INFO   | jvm 2    | 2017/08/03 17:05:24 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 2    | 2017/08/03 17:05:27 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 2    | 2017/08/03 17:05:28 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 2    | 2017/08/03 17:05:28 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 2    | 2017/08/03 17:05:29 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 2    | 2017/08/03 17:05:31 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 2    | 2017/08/03 17:05:31 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 2    | 2017/08/03 17:47:45 |  WARN | Transport Connection to: tcp://127.0.0.1:1516 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/04 09:13:45 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/04 09:13:46 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/04 09:13:47 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/04 09:13:47 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/04 09:13:47 | 
+INFO   | jvm 1    | 2017/08/04 09:13:47 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/04 09:13:47 |   Heap sizes: current=125952k  free=117295k  max=932352k
+INFO   | jvm 1    | 2017/08/04 09:13:47 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=B6wRoUmsKL5k_XkQ -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=5020 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/04 09:13:47 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/04 09:13:47 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/04 09:13:47 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/04 09:13:47 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/04 09:13:47 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/04 09:13:47 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/04 09:13:48 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/04 09:13:48 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@4163d4e7: startup date [Fri Aug 04 09:13:48 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/04 09:13:50 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/04 09:13:52 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/04 09:13:52 |  INFO | Recovering from the journal @1:367443
+INFO   | jvm 1    | 2017/08/04 09:13:52 |  INFO | Recovery replayed 609 operations from the journal in 0.075 seconds.
+INFO   | jvm 1    | 2017/08/04 09:13:52 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/04 09:13:52 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-11006-1501809232404-0:1) is starting
+INFO   | jvm 1    | 2017/08/04 09:13:52 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 09:13:52 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/04 09:13:52 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 09:13:52 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/04 09:13:52 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 09:13:52 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/04 09:13:52 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 09:13:52 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/04 09:13:53 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@b9e0a29{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/04 09:13:53 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 09:13:53 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/04 09:13:53 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-11006-1501809232404-0:1) started
+INFO   | jvm 1    | 2017/08/04 09:13:53 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/04 09:13:54 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/04 09:13:54 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/04 09:13:54 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/04 09:13:54 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/04 09:13:55 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/04 09:13:55 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/04 09:22:16 |  WARN | Transport Connection to: tcp://127.0.0.1:11451 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/04 10:14:53 |  WARN | Transport Connection to: tcp://127.0.0.1:15909 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/04 10:30:57 |  WARN | Transport Connection to: tcp://127.0.0.1:17858 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/04 10:38:53 |  WARN | Transport Connection to: tcp://127.0.0.1:19471 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/04 10:46:24 |  WARN | Transport Connection to: tcp://127.0.0.1:20657 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/04 10:57:45 |  WARN | Transport Connection to: tcp://127.0.0.1:21353 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/04 11:01:42 |  WARN | Transport Connection to: tcp://127.0.0.1:22385 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/04 11:12:23 |  WARN | Transport Connection to: tcp://127.0.0.1:22967 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/04 11:20:59 |  WARN | Transport Connection to: tcp://127.0.0.1:23573 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/04 14:36:23 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/04 14:36:24 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/04 14:36:26 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/04 14:36:26 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/04 14:36:26 | 
+INFO   | jvm 1    | 2017/08/04 14:36:26 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/04 14:36:26 |   Heap sizes: current=125952k  free=117298k  max=932352k
+INFO   | jvm 1    | 2017/08/04 14:36:26 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=zZ1gcpwoAQjvrC9z -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=11860 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/04 14:36:26 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/04 14:36:26 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/04 14:36:26 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/04 14:36:26 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/04 14:36:26 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/04 14:36:26 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/04 14:36:27 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/04 14:36:27 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@81b082d: startup date [Fri Aug 04 14:36:27 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/04 14:36:30 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/04 14:36:31 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/04 14:36:31 |  INFO | Recovering from the journal @1:522385
+INFO   | jvm 1    | 2017/08/04 14:36:31 |  INFO | Recovery replayed 1580 operations from the journal in 0.148 seconds.
+INFO   | jvm 1    | 2017/08/04 14:36:31 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/04 14:36:31 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-33879-1501828591757-0:1) is starting
+INFO   | jvm 1    | 2017/08/04 14:36:32 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 14:36:32 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/04 14:36:32 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 14:36:32 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/04 14:36:32 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 14:36:32 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/04 14:36:32 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 14:36:32 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/04 14:36:32 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2d71edf8{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/04 14:36:32 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 14:36:32 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/04 14:36:32 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-33879-1501828591757-0:1) started
+INFO   | jvm 1    | 2017/08/04 14:36:32 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/04 14:36:33 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/04 14:36:33 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/04 14:36:33 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/04 14:36:33 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/04 14:36:34 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/04 14:36:34 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/04 15:16:25 |  WARN | Transport Connection to: tcp://127.0.0.1:34540 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/04 15:30:20 |  WARN | Transport Connection to: tcp://127.0.0.1:36488 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/04 15:37:07 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/04 15:37:07 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/04 15:37:11 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/04 15:37:11 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/04 15:37:11 | 
+INFO   | jvm 1    | 2017/08/04 15:37:11 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/04 15:37:11 |   Heap sizes: current=125952k  free=117298k  max=932352k
+INFO   | jvm 1    | 2017/08/04 15:37:11 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=4pzEkvNf4iibpWNs -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=7960 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/04 15:37:11 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/04 15:37:11 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/04 15:37:11 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/04 15:37:11 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/04 15:37:11 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/04 15:37:11 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/04 15:37:16 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/04 15:37:17 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@81b082d: startup date [Fri Aug 04 15:37:17 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/04 15:37:28 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/04 15:37:46 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/04 15:37:47 |  INFO | Recovering from the journal @1:922019
+INFO   | jvm 1    | 2017/08/04 15:37:47 |  INFO | Recovery replayed 641 operations from the journal in 0.238 seconds.
+INFO   | jvm 1    | 2017/08/04 15:37:47 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/04 15:37:47 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1335-1501832267332-0:1) is starting
+INFO   | jvm 1    | 2017/08/04 15:37:48 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 15:37:48 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/04 15:37:48 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 15:37:48 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/04 15:37:48 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 15:37:48 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/04 15:37:48 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 15:37:48 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/04 15:37:49 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2d71edf8{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/04 15:37:50 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/04 15:37:50 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/04 15:37:50 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1335-1501832267332-0:1) started
+INFO   | jvm 1    | 2017/08/04 15:37:50 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/04 15:37:54 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/04 15:37:59 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/04 15:37:59 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/04 15:38:00 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/04 15:38:04 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/04 15:38:05 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/04 15:49:53 |  WARN | Transport Connection to: tcp://127.0.0.1:1752 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/04 15:51:34 |  WARN | Transport Connection to: tcp://127.0.0.1:2396 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/04 18:26:55 |  WARN | Transport Connection to: tcp://127.0.0.1:2827 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/04 18:52:34 |  WARN | Transport Connection to: tcp://127.0.0.1:13362 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/08 09:19:52 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/08 09:19:52 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/08 09:19:53 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/08 09:19:53 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/08 09:19:53 | 
+INFO   | jvm 1    | 2017/08/08 09:19:53 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/08 09:19:53 |   Heap sizes: current=125952k  free=117248k  max=932352k
+INFO   | jvm 1    | 2017/08/08 09:19:53 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=9rkmOkATARHl8nqw -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=8788 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/08 09:19:53 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/08 09:19:53 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/08 09:19:53 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/08 09:19:53 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/08 09:19:53 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/08 09:19:53 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/08 09:19:54 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/08 09:19:54 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@81b082d: startup date [Tue Aug 08 09:19:54 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/08 09:19:56 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/08 09:19:57 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/08 09:19:57 |  INFO | Recovering from the journal @1:1085025
+INFO   | jvm 1    | 2017/08/08 09:19:57 |  INFO | Recovery replayed 2054 operations from the journal in 0.123 seconds.
+INFO   | jvm 1    | 2017/08/08 09:19:57 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/08 09:19:57 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-8366-1502155197616-0:1) is starting
+INFO   | jvm 1    | 2017/08/08 09:19:57 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/08 09:19:57 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/08 09:19:57 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/08 09:19:58 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/08 09:19:58 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/08 09:19:58 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/08 09:19:58 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/08 09:19:58 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/08 09:19:58 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2d71edf8{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/08 09:19:58 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/08 09:19:58 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/08 09:19:58 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-8366-1502155197616-0:1) started
+INFO   | jvm 1    | 2017/08/08 09:19:58 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/08 09:19:58 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/08 09:19:59 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/08 09:19:59 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/08 09:19:59 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/08 09:19:59 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/08 09:20:00 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/08 10:07:40 |  WARN | Transport Connection to: tcp://127.0.0.1:9055 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/08 15:31:36 |  WARN | Transport Connection to: tcp://127.0.0.1:13391 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/09 09:20:20 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/09 09:20:20 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/09 09:20:22 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/09 09:20:22 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/09 09:20:22 | 
+INFO   | jvm 1    | 2017/08/09 09:20:22 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/09 09:20:22 |   Heap sizes: current=125952k  free=117248k  max=932352k
+INFO   | jvm 1    | 2017/08/09 09:20:22 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=Aj_p1rho_cyajuEe -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=15536 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/09 09:20:22 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/09 09:20:22 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/09 09:20:22 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/09 09:20:22 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/09 09:20:22 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/09 09:20:22 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/09 09:20:25 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/09 09:20:25 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@4163d4e7: startup date [Wed Aug 09 09:20:25 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/09 09:20:27 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/09 09:20:28 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/09 09:20:28 |  INFO | Recovering from the journal @1:1604107
+INFO   | jvm 1    | 2017/08/09 09:20:28 |  INFO | Recovery replayed 4384 operations from the journal in 0.12 seconds.
+INFO   | jvm 1    | 2017/08/09 09:20:28 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/09 09:20:28 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-24890-1502241628516-0:1) is starting
+INFO   | jvm 1    | 2017/08/09 09:20:28 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/09 09:20:28 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/09 09:20:28 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/09 09:20:28 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/09 09:20:28 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/09 09:20:28 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/09 09:20:28 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/09 09:20:28 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/09 09:20:29 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@b9e0a29{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/09 09:20:29 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/09 09:20:29 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/09 09:20:29 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-24890-1502241628516-0:1) started
+INFO   | jvm 1    | 2017/08/09 09:20:29 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/09 09:20:30 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/09 09:20:30 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/09 09:20:30 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/09 09:20:30 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/09 09:20:30 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/09 09:20:31 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/09 14:56:50 |  WARN | Transport Connection to: tcp://127.0.0.1:28034 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/09 19:38:24 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2017/08/10 09:21:03 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/10 09:21:03 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/10 09:21:05 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/10 09:21:05 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/10 09:21:05 | 
+INFO   | jvm 1    | 2017/08/10 09:21:05 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/10 09:21:05 |   Heap sizes: current=125952k  free=117217k  max=932352k
+INFO   | jvm 1    | 2017/08/10 09:21:05 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=hDuduDS75C9x3VeD -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=11072 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/10 09:21:05 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/10 09:21:05 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/10 09:21:05 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/10 09:21:05 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/10 09:21:05 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/10 09:21:05 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/10 09:21:07 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/10 09:21:07 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@41a0e836: startup date [Thu Aug 10 09:21:07 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/10 09:21:09 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/10 09:21:11 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/10 09:21:11 |  INFO | Recovering from the journal @1:2710349
+INFO   | jvm 1    | 2017/08/10 09:21:11 |  INFO | Recovery replayed 6358 operations from the journal in 0.163 seconds.
+INFO   | jvm 1    | 2017/08/10 09:21:11 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/10 09:21:11 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-7680-1502328071492-0:1) is starting
+INFO   | jvm 1    | 2017/08/10 09:21:11 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/10 09:21:11 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/10 09:21:11 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/10 09:21:11 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/10 09:21:11 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/10 09:21:11 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/10 09:21:11 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/10 09:21:11 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/10 09:21:12 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@6835e124{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/10 09:21:12 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/10 09:21:12 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/10 09:21:12 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-7680-1502328071492-0:1) started
+INFO   | jvm 1    | 2017/08/10 09:21:12 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/10 09:21:13 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/10 09:21:14 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/10 09:21:14 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/10 09:21:14 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/10 09:21:14 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/10 09:21:15 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+STATUS | wrapper  | 2017/08/10 11:05:29 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2017/08/10 14:08:04 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/10 14:08:05 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/10 14:08:14 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/10 14:08:14 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/10 14:08:14 | 
+INFO   | jvm 1    | 2017/08/10 14:08:15 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/10 14:08:15 |   Heap sizes: current=125952k  free=117216k  max=932352k
+INFO   | jvm 1    | 2017/08/10 14:08:15 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=6rFaa0gO2PmJ6Mrx -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=4388 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/10 14:08:15 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/10 14:08:15 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/10 14:08:15 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/10 14:08:15 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/10 14:08:15 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/10 14:08:15 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/10 14:08:21 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/10 14:08:22 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@3785c87b: startup date [Thu Aug 10 14:08:22 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/10 14:08:35 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/10 14:08:43 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/10 14:08:44 |  INFO | Recovering from the journal @1:4314039
+INFO   | jvm 1    | 2017/08/10 14:08:44 |  INFO | Recovery replayed 1240 operations from the journal in 0.094 seconds.
+INFO   | jvm 1    | 2017/08/10 14:08:44 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/10 14:08:44 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-20477-1502345324064-0:1) is starting
+INFO   | jvm 1    | 2017/08/10 14:08:44 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/10 14:08:44 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/10 14:08:44 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/10 14:08:44 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/10 14:08:44 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/10 14:08:44 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/10 14:08:44 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/10 14:08:44 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/10 14:08:45 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@15f137e4{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/10 14:08:45 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/10 14:08:45 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/10 14:08:45 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-20477-1502345324064-0:1) started
+INFO   | jvm 1    | 2017/08/10 14:08:45 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/10 14:08:46 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/10 14:08:47 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/10 14:08:47 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/10 14:08:47 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/10 14:08:49 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/10 14:08:49 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/10 14:45:02 |  WARN | Transport Connection to: tcp://127.0.0.1:20973 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/14 10:03:20 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/14 10:03:20 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/14 10:03:21 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/14 10:03:21 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/14 10:03:21 | 
+INFO   | jvm 1    | 2017/08/14 10:03:21 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/14 10:03:21 |   Heap sizes: current=125952k  free=117298k  max=932352k
+INFO   | jvm 1    | 2017/08/14 10:03:21 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=DHBkdJRirow7hW9H -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=6136 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/14 10:03:21 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/14 10:03:21 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/14 10:03:21 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/14 10:03:21 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/14 10:03:21 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/14 10:03:21 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/14 10:03:23 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/14 10:03:24 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@81b082d: startup date [Mon Aug 14 10:03:23 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/14 10:03:25 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/14 10:03:26 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/14 10:03:26 |  INFO | Recovering from the journal @1:4627993
+INFO   | jvm 1    | 2017/08/14 10:03:26 |  INFO | Recovery replayed 432 operations from the journal in 0.088 seconds.
+INFO   | jvm 1    | 2017/08/14 10:03:26 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-16998-1502676206924-0:1) is starting
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2d71edf8{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-16998-1502676206924-0:1) started
+INFO   | jvm 1    | 2017/08/14 10:03:27 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/14 10:03:28 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/14 10:03:28 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/14 10:03:28 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/14 10:03:29 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/14 10:03:29 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/14 10:03:29 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/14 10:49:48 |  WARN | Transport Connection to: tcp://127.0.0.1:17134 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/14 14:05:59 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/14 14:05:59 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/14 14:06:05 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/14 14:06:05 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/14 14:06:05 | 
+INFO   | jvm 1    | 2017/08/14 14:06:05 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/14 14:06:05 |   Heap sizes: current=125952k  free=117297k  max=932352k
+INFO   | jvm 1    | 2017/08/14 14:06:05 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=07_tb_1VDS1lc7uS -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=17052 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/14 14:06:05 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/14 14:06:05 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/14 14:06:05 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/14 14:06:05 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/14 14:06:05 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/14 14:06:05 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/14 14:06:06 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/14 14:06:06 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@81b082d: startup date [Mon Aug 14 14:06:06 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/14 14:06:08 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/14 14:06:10 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/14 14:06:10 |  INFO | Recovering from the journal @1:4738331
+INFO   | jvm 1    | 2017/08/14 14:06:10 |  INFO | Recovery replayed 1155 operations from the journal in 0.046 seconds.
+INFO   | jvm 1    | 2017/08/14 14:06:10 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/14 14:06:10 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-22148-1502690770518-0:1) is starting
+INFO   | jvm 1    | 2017/08/14 14:06:10 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 14:06:10 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/14 14:06:10 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 14:06:10 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/14 14:06:10 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 14:06:10 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/14 14:06:10 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 14:06:10 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/14 14:06:11 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2d71edf8{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/14 14:06:11 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 14:06:11 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/14 14:06:11 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-22148-1502690770518-0:1) started
+INFO   | jvm 1    | 2017/08/14 14:06:11 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/14 14:06:11 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/14 14:06:13 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/14 14:06:13 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/14 14:06:13 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/14 14:06:13 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/14 14:06:14 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+STATUS | wrapper  | 2017/08/14 15:22:59 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/14 15:22:59 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/14 15:23:00 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/14 15:23:00 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/14 15:23:00 | 
+INFO   | jvm 1    | 2017/08/14 15:23:01 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/14 15:23:01 |   Heap sizes: current=125952k  free=117298k  max=932352k
+INFO   | jvm 1    | 2017/08/14 15:23:01 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=6V6eFGZVw3lh7eBY -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=13732 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/14 15:23:01 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/14 15:23:01 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/14 15:23:01 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/14 15:23:01 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/14 15:23:01 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/14 15:23:01 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/14 15:23:02 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/14 15:23:03 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@4163d4e7: startup date [Mon Aug 14 15:23:03 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/14 15:23:04 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/14 15:23:05 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/14 15:23:05 |  INFO | Recovering from the journal @1:5030865
+INFO   | jvm 1    | 2017/08/14 15:23:05 |  INFO | Recovery replayed 482 operations from the journal in 0.059 seconds.
+INFO   | jvm 1    | 2017/08/14 15:23:05 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/14 15:23:05 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-26712-1502695385681-0:1) is starting
+INFO   | jvm 1    | 2017/08/14 15:23:06 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 15:23:06 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/14 15:23:06 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 15:23:06 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/14 15:23:06 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 15:23:06 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/14 15:23:06 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 15:23:06 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/14 15:23:06 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@b9e0a29{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/14 15:23:06 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/14 15:23:06 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/14 15:23:06 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-26712-1502695385681-0:1) started
+INFO   | jvm 1    | 2017/08/14 15:23:06 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/14 15:23:07 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/14 15:23:07 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/14 15:23:07 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/14 15:23:07 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/14 15:23:08 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/14 15:23:08 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/14 16:48:18 |  WARN | Transport Connection to: tcp://127.0.0.1:26770 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/15 09:25:16 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/15 09:25:17 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/15 09:25:18 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/15 09:25:18 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/15 09:25:18 | 
+INFO   | jvm 1    | 2017/08/15 09:25:18 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/15 09:25:18 |   Heap sizes: current=125952k  free=117296k  max=932352k
+INFO   | jvm 1    | 2017/08/15 09:25:18 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=G78gm1D5YOzZGlJI -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=14368 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/15 09:25:18 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/15 09:25:18 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/15 09:25:18 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/15 09:25:18 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/15 09:25:18 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/15 09:25:18 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/15 09:25:20 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/15 09:25:20 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@5c2a3ec7: startup date [Tue Aug 15 09:25:20 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/15 09:25:21 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/15 09:25:22 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/15 09:25:22 |  INFO | Recovering from the journal @1:5153803
+INFO   | jvm 1    | 2017/08/15 09:25:22 |  INFO | Recovery replayed 3482 operations from the journal in 0.104 seconds.
+INFO   | jvm 1    | 2017/08/15 09:25:22 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-11884-1502760322825-0:1) is starting
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2628740a{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-11884-1502760322825-0:1) started
+INFO   | jvm 1    | 2017/08/15 09:25:23 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/15 09:25:25 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/15 09:25:25 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/15 09:25:25 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/15 09:25:25 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/15 09:25:26 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/15 09:25:26 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/15 14:51:53 |  WARN | Transport Connection to: tcp://127.0.0.1:13799 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/15 15:22:19 |  WARN | Transport Connection to: tcp://127.0.0.1:29874 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/15 19:52:00 |  WARN | Transport Connection to: tcp://127.0.0.1:33474 failed: org.apache.activemq.transport.InactivityIOException: Channel was inactive for too (>30000) long: tcp://127.0.0.1:33474
+INFO   | jvm 1    | 2017/08/15 20:17:09 |  WARN | Transport Connection to: tcp://127.0.0.1:52309 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/15 20:42:18 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2017/08/16 09:10:21 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/16 09:10:21 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/16 09:10:23 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/16 09:10:23 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/16 09:10:23 | 
+INFO   | jvm 1    | 2017/08/16 09:10:24 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/16 09:10:24 |   Heap sizes: current=125952k  free=117298k  max=932352k
+INFO   | jvm 1    | 2017/08/16 09:10:24 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=TraXHBXOBjyd4Djp -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=10328 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/16 09:10:24 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/16 09:10:24 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/16 09:10:24 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/16 09:10:24 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/16 09:10:24 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/16 09:10:24 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/16 09:10:26 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/16 09:10:26 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@4163d4e7: startup date [Wed Aug 16 09:10:26 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/16 09:10:28 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/16 09:10:31 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/16 09:10:31 |  INFO | Recovering from the journal @1:6032741
+INFO   | jvm 1    | 2017/08/16 09:10:31 |  INFO | Recovery replayed 5862 operations from the journal in 0.266 seconds.
+INFO   | jvm 1    | 2017/08/16 09:10:31 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/16 09:10:31 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-3088-1502845831273-0:1) is starting
+INFO   | jvm 1    | 2017/08/16 09:10:31 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/16 09:10:31 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/16 09:10:31 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/16 09:10:31 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/16 09:10:31 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/16 09:10:31 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/16 09:10:31 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/16 09:10:31 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/16 09:10:32 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@b9e0a29{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/16 09:10:32 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/16 09:10:32 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/16 09:10:32 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-3088-1502845831273-0:1) started
+INFO   | jvm 1    | 2017/08/16 09:10:32 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/16 09:10:33 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/16 09:10:33 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/16 09:10:33 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/16 09:10:34 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/16 09:10:35 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/16 09:10:35 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/16 10:23:32 |  WARN | Transport Connection to: tcp://127.0.0.1:7444 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/16 10:30:05 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/16 10:30:06 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/16 10:30:31 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/16 10:30:31 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/16 10:30:31 | 
+INFO   | jvm 1    | 2017/08/16 10:30:32 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/16 10:30:32 |   Heap sizes: current=125952k  free=117298k  max=932352k
+INFO   | jvm 1    | 2017/08/16 10:30:32 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=10vaEev71ba6joxW -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=1200 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/16 10:30:32 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/16 10:30:32 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/16 10:30:32 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/16 10:30:32 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/16 10:30:32 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/16 10:30:32 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/16 10:31:06 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/16 10:31:11 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@6d8286b: startup date [Wed Aug 16 10:31:10 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/16 10:32:46 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/16 10:33:12 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/16 10:33:12 |  INFO | Recovering from the journal @1:7511439
+INFO   | jvm 1    | 2017/08/16 10:33:12 |  INFO | Recovery replayed 875 operations from the journal in 0.404 seconds.
+INFO   | jvm 1    | 2017/08/16 10:33:12 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/16 10:33:13 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1428-1502850792869-0:1) is starting
+INFO   | jvm 1    | 2017/08/16 10:33:13 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/16 10:33:13 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/16 10:33:13 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/16 10:33:13 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/16 10:33:13 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/16 10:33:13 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/16 10:33:13 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/16 10:33:13 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/16 10:33:15 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@5c2bf20f{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/16 10:33:17 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/16 10:33:17 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/16 10:33:17 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1428-1502850792869-0:1) started
+INFO   | jvm 1    | 2017/08/16 10:33:17 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/16 10:33:21 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/16 10:33:23 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/16 10:33:23 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/16 10:33:23 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/16 10:33:25 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/16 10:33:26 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/16 10:47:54 |  WARN | Transport Connection to: tcp://127.0.0.1:1825 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/16 10:54:16 |  WARN | Transport Connection to: tcp://127.0.0.1:3265 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/16 11:11:03 |  WARN | Transport Connection to: tcp://127.0.0.1:4804 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/16 11:25:37 |  WARN | Transport Connection to: tcp://127.0.0.1:7095 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/16 11:42:03 |  WARN | Transport Connection to: tcp://127.0.0.1:8947 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/16 11:49:43 |  WARN | Transport Connection to: tcp://127.0.0.1:10003 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/16 14:17:01 |  WARN | Transport Connection to: tcp://127.0.0.1:12242 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/16 20:31:26 |  WARN | Transport Connection to: tcp://127.0.0.1:17874 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/16 21:09:34 |  WARN | Transport Connection to: tcp://127.0.0.1:49035 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/16 21:09:47 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2017/08/17 08:55:34 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/17 08:55:35 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/17 08:55:36 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/17 08:55:36 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/17 08:55:36 | 
+INFO   | jvm 1    | 2017/08/17 08:55:36 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/17 08:55:36 |   Heap sizes: current=125952k  free=117298k  max=932352k
+INFO   | jvm 1    | 2017/08/17 08:55:36 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=gnLPvUQFHc3tv7Py -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=7392 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/17 08:55:36 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/17 08:55:36 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/17 08:55:36 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/17 08:55:36 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/17 08:55:36 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/17 08:55:36 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/17 08:55:37 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/17 08:55:38 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@81b082d: startup date [Thu Aug 17 08:55:38 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/17 08:55:40 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  INFO | Recovering from the journal @1:7733413
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  INFO | Recovery replayed 5562 operations from the journal in 0.139 seconds.
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-3679-1502931341285-0:1) is starting
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/17 08:55:41 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2d71edf8{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/17 08:55:42 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 08:55:42 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/17 08:55:42 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-3679-1502931341285-0:1) started
+INFO   | jvm 1    | 2017/08/17 08:55:42 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/17 08:55:42 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/17 08:55:43 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/17 08:55:43 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/17 08:55:43 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/17 08:55:43 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/17 08:55:44 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/17 09:12:11 |  WARN | Transport Connection to: tcp://127.0.0.1:4856 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/17 09:34:26 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/17 09:34:26 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/17 09:34:28 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/17 09:34:28 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/17 09:34:28 | 
+INFO   | jvm 1    | 2017/08/17 09:34:29 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/17 09:34:29 |   Heap sizes: current=125952k  free=117297k  max=932352k
+INFO   | jvm 1    | 2017/08/17 09:34:29 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=04_hz9XFvTSvmfi8 -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=7436 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/17 09:34:29 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/17 09:34:29 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/17 09:34:29 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/17 09:34:29 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/17 09:34:29 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/17 09:34:29 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/17 09:34:31 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/17 09:34:31 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@81b082d: startup date [Thu Aug 17 09:34:31 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/17 09:34:33 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/17 09:34:34 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/17 09:34:34 |  INFO | Recovering from the journal @1:9136511
+INFO   | jvm 1    | 2017/08/17 09:34:34 |  INFO | Recovery replayed 250 operations from the journal in 0.082 seconds.
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1928-1502933674994-0:1) is starting
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2d71edf8{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1928-1502933674994-0:1) started
+INFO   | jvm 1    | 2017/08/17 09:34:35 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/17 09:34:36 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/17 09:34:37 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/17 09:34:37 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/17 09:34:37 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/17 09:34:38 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/17 09:34:38 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+STATUS | wrapper  | 2017/08/17 10:13:17 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/17 10:13:17 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/17 10:13:25 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/17 10:13:25 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/17 10:13:25 | 
+INFO   | jvm 1    | 2017/08/17 10:13:26 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/17 10:13:26 |   Heap sizes: current=125952k  free=117248k  max=932352k
+INFO   | jvm 1    | 2017/08/17 10:13:26 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=KNdKCp2EizGwenMK -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=8736 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/17 10:13:26 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/17 10:13:26 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/17 10:13:26 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/17 10:13:26 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/17 10:13:26 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/17 10:13:26 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/17 10:13:36 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/17 10:13:36 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@81b082d: startup date [Thu Aug 17 10:13:36 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/17 10:13:49 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/17 10:14:19 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/17 10:14:19 |  INFO | Recovering from the journal @1:9200985
+INFO   | jvm 1    | 2017/08/17 10:14:19 |  INFO | Recovery replayed 315 operations from the journal in 0.168 seconds.
+INFO   | jvm 1    | 2017/08/17 10:14:19 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/17 10:14:21 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1714-1502936059605-0:1) is starting
+INFO   | jvm 1    | 2017/08/17 10:14:25 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 10:14:25 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/17 10:14:25 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 10:14:25 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/17 10:14:25 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 10:14:25 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/17 10:14:25 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 10:14:25 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/17 10:14:28 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2d71edf8{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/17 10:14:28 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 10:14:28 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/17 10:14:28 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1714-1502936059605-0:1) started
+INFO   | jvm 1    | 2017/08/17 10:14:28 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/17 10:14:36 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/17 10:14:38 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/17 10:14:38 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/17 10:14:39 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/17 10:14:52 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/17 10:14:54 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/17 10:24:00 |  WARN | Transport Connection to: tcp://127.0.0.1:2296 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/17 10:29:03 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/17 10:29:08 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/17 10:29:29 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/17 10:29:29 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/17 10:29:29 | 
+INFO   | jvm 1    | 2017/08/17 10:29:30 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/17 10:29:30 |   Heap sizes: current=125952k  free=117248k  max=932352k
+INFO   | jvm 1    | 2017/08/17 10:29:30 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=3wmtWIOe7v6Gf_Sa -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=7540 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/17 10:29:30 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/17 10:29:30 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/17 10:29:30 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/17 10:29:30 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/17 10:29:30 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/17 10:29:30 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/17 10:31:11 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/17 10:31:17 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@18b68c6d: startup date [Thu Aug 17 10:31:17 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/17 10:32:17 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/17 10:32:39 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/17 10:32:39 |  INFO | Recovering from the journal @1:9281839
+INFO   | jvm 1    | 2017/08/17 10:32:39 |  INFO | Recovery replayed 115 operations from the journal in 0.656 seconds.
+INFO   | jvm 1    | 2017/08/17 10:32:40 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/17 10:32:43 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1416-1502937160835-0:1) is starting
+INFO   | jvm 1    | 2017/08/17 10:32:48 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 10:32:48 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/17 10:32:48 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 10:32:48 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/17 10:32:48 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 10:32:48 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/17 10:32:48 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 10:32:48 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/17 10:32:52 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@57162e0d{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/17 10:32:55 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/17 10:32:55 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/17 10:32:55 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1416-1502937160835-0:1) started
+INFO   | jvm 1    | 2017/08/17 10:32:55 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/17 10:33:06 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/17 10:33:07 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/17 10:33:07 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/17 10:33:07 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/17 10:33:10 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/17 10:33:10 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/17 10:54:17 |  WARN | Transport Connection to: tcp://127.0.0.1:1820 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/17 10:58:44 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/17 10:58:46 | Launching a JVM...
+ERROR  | wrapper  | 2017/08/17 10:59:16 | Startup failed: Timed out waiting for a signal from the JVM.
+ERROR  | wrapper  | 2017/08/17 10:59:16 | JVM did not exit on request, terminated
+STATUS | wrapper  | 2017/08/17 10:59:20 | Launching a JVM...
+INFO   | jvm 2    | 2017/08/17 10:59:22 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 2    | 2017/08/17 10:59:22 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 2    | 2017/08/17 10:59:22 | 
+INFO   | jvm 2    | 2017/08/17 10:59:23 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 2    | 2017/08/17 10:59:23 |   Heap sizes: current=125952k  free=117283k  max=932352k
+INFO   | jvm 2    | 2017/08/17 10:59:23 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=UMot_TcRXrG4aJLx -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=6436 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=2
+INFO   | jvm 2    | 2017/08/17 10:59:23 | Extensions classpath:
+INFO   | jvm 2    | 2017/08/17 10:59:23 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 2    | 2017/08/17 10:59:23 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 2    | 2017/08/17 10:59:23 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 2    | 2017/08/17 10:59:23 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 2    | 2017/08/17 10:59:23 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 2    | 2017/08/17 11:00:34 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 2    | 2017/08/17 11:00:40 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@81b082d: startup date [Thu Aug 17 11:00:39 CST 2017]; root of context hierarchy
+INFO   | jvm 2    | 2017/08/17 11:01:07 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 2    | 2017/08/17 11:02:25 |  INFO | KahaDB is version 6
+INFO   | jvm 2    | 2017/08/17 11:02:26 |  INFO | Recovering from the journal @1:9312293
+INFO   | jvm 2    | 2017/08/17 11:02:26 |  INFO | Recovery replayed 257 operations from the journal in 0.992 seconds.
+INFO   | jvm 2    | 2017/08/17 11:02:26 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 2    | 2017/08/17 11:02:32 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1442-1502938950442-0:1) is starting
+INFO   | jvm 2    | 2017/08/17 11:02:33 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 2    | 2017/08/17 11:02:33 |  INFO | Connector openwire started
+INFO   | jvm 2    | 2017/08/17 11:02:33 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 2    | 2017/08/17 11:02:33 |  INFO | Connector amqp started
+INFO   | jvm 2    | 2017/08/17 11:02:33 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 2    | 2017/08/17 11:02:33 |  INFO | Connector stomp started
+INFO   | jvm 2    | 2017/08/17 11:02:33 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 2    | 2017/08/17 11:02:33 |  INFO | Connector mqtt started
+INFO   | jvm 2    | 2017/08/17 11:02:35 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2d71edf8{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 2    | 2017/08/17 11:02:37 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 2    | 2017/08/17 11:02:37 |  INFO | Connector ws started
+INFO   | jvm 2    | 2017/08/17 11:02:37 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-1442-1502938950442-0:1) started
+INFO   | jvm 2    | 2017/08/17 11:02:37 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 2    | 2017/08/17 11:02:48 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 2    | 2017/08/17 11:02:51 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 2    | 2017/08/17 11:02:51 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 2    | 2017/08/17 11:02:51 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 2    | 2017/08/17 11:02:57 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 2    | 2017/08/17 11:02:59 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 2    | 2017/08/17 14:34:21 |  WARN | Transport Connection to: tcp://127.0.0.1:1713 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/22 09:47:33 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/22 09:47:33 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/22 09:47:37 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/22 09:47:37 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/22 09:47:37 | 
+INFO   | jvm 1    | 2017/08/22 09:47:37 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/22 09:47:37 |   Heap sizes: current=125952k  free=117217k  max=932352k
+INFO   | jvm 1    | 2017/08/22 09:47:37 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=DgqZ6mWJUXTWxgB2 -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=11756 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/22 09:47:37 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/22 09:47:37 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/22 09:47:37 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/22 09:47:37 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/22 09:47:37 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/22 09:47:37 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/22 09:47:51 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/22 09:47:52 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@5c2a3ec7: startup date [Tue Aug 22 09:47:52 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/22 09:48:02 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/22 09:48:22 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/22 09:48:22 |  INFO | Recovering from the journal @1:9378531
+INFO   | jvm 1    | 2017/08/22 09:48:22 |  INFO | Recovery replayed 3819 operations from the journal in 0.428 seconds.
+INFO   | jvm 1    | 2017/08/22 09:48:23 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/22 09:48:23 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-10573-1503366503110-0:1) is starting
+INFO   | jvm 1    | 2017/08/22 09:48:23 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/22 09:48:23 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/22 09:48:23 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/22 09:48:23 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/22 09:48:23 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/22 09:48:23 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/22 09:48:23 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/22 09:48:23 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/22 09:48:25 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2628740a{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/22 09:48:26 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/22 09:48:26 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/22 09:48:26 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-10573-1503366503110-0:1) started
+INFO   | jvm 1    | 2017/08/22 09:48:26 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/22 09:48:29 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/22 09:48:31 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/22 09:48:31 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/22 09:48:32 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/22 09:48:35 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/22 09:48:35 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/22 10:15:31 |  WARN | Transport Connection to: tcp://127.0.0.1:12286 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/22 10:41:29 |  WARN | Transport Connection to: tcp://127.0.0.1:14358 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/22 11:01:19 |  WARN | Transport Connection to: tcp://127.0.0.1:17205 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/22 15:10:39 |  WARN | Transport Connection to: tcp://127.0.0.1:18337 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/22 15:17:22 |  WARN | Transport Connection to: tcp://127.0.0.1:27931 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/22 15:38:58 |  WARN | Transport Connection to: tcp://127.0.0.1:28863 failed: java.net.SocketException: Connection reset
+ERROR  | wrapper  | 2017/08/22 15:48:21 | JVM exited unexpectedly.
+STATUS | wrapper  | 2017/08/22 15:52:10 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/22 15:52:10 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/22 15:52:12 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/22 15:52:12 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/22 15:52:12 | 
+INFO   | jvm 1    | 2017/08/22 15:52:13 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/22 15:52:13 |   Heap sizes: current=125952k  free=117217k  max=932352k
+INFO   | jvm 1    | 2017/08/22 15:52:13 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=cyGPuXkUkaaEa08D -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=6688 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/22 15:52:13 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/22 15:52:13 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/22 15:52:13 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/22 15:52:13 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/22 15:52:13 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/22 15:52:13 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/22 15:52:16 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/22 15:52:16 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@81b082d: startup date [Tue Aug 22 15:52:16 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/22 15:52:20 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/22 15:52:28 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/22 15:52:28 |  INFO | Recovering from the journal @1:10342393
+INFO   | jvm 1    | 2017/08/22 15:52:28 |  INFO | Recovery replayed 2789 operations from the journal in 0.152 seconds.
+INFO   | jvm 1    | 2017/08/22 15:52:28 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/22 15:52:28 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-33244-1503388348472-0:1) is starting
+INFO   | jvm 1    | 2017/08/22 15:52:29 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/22 15:52:29 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/22 15:52:29 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/22 15:52:29 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/22 15:52:29 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/22 15:52:29 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/22 15:52:29 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/22 15:52:29 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/22 15:52:30 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2d71edf8{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/22 15:52:31 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/22 15:52:31 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/22 15:52:31 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-33244-1503388348472-0:1) started
+INFO   | jvm 1    | 2017/08/22 15:52:31 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/22 15:52:35 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/22 15:52:36 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/22 15:52:36 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/22 15:52:36 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/22 15:52:37 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/22 15:52:37 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/22 19:07:58 |  WARN | Transport Connection to: tcp://127.0.0.1:33945 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/22 19:47:57 | CTRL-C trapped.  Shutting down.
+STATUS | wrapper  | 2017/08/24 10:09:30 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/24 10:09:30 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/24 10:09:37 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/24 10:09:37 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/24 10:09:37 | 
+INFO   | jvm 1    | 2017/08/24 10:09:37 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/24 10:09:37 |   Heap sizes: current=125952k  free=117298k  max=932352k
+INFO   | jvm 1    | 2017/08/24 10:09:37 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=v4blSk9HHdBCqXwR -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=17984 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/24 10:09:37 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/24 10:09:37 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/24 10:09:37 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/24 10:09:37 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/24 10:09:37 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/24 10:09:37 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/24 10:09:48 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/24 10:09:51 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@6c159bff: startup date [Thu Aug 24 10:09:51 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/24 10:10:04 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/24 10:10:31 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/24 10:10:32 |  INFO | Recovering from the journal @1:11046695
+INFO   | jvm 1    | 2017/08/24 10:10:32 |  INFO | Recovery replayed 2355 operations from the journal in 0.365 seconds.
+INFO   | jvm 1    | 2017/08/24 10:10:33 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/24 10:10:34 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-11134-1503540633801-0:1) is starting
+INFO   | jvm 1    | 2017/08/24 10:10:35 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/24 10:10:35 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/24 10:10:35 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/24 10:10:35 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/24 10:10:35 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/24 10:10:35 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/24 10:10:35 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/24 10:10:35 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/24 10:10:40 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@4b55bdd9{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/24 10:10:41 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/24 10:10:41 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/24 10:10:41 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-11134-1503540633801-0:1) started
+INFO   | jvm 1    | 2017/08/24 10:10:41 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/24 10:10:51 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/24 10:10:54 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/24 10:10:54 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/24 10:10:54 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/24 10:10:59 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/24 10:11:01 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/24 10:52:44 |  WARN | Transport Connection to: tcp://127.0.0.1:12301 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/24 11:04:31 |  WARN | Transport Connection to: tcp://127.0.0.1:15267 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/25 16:42:47 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/25 16:42:48 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/25 16:42:52 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/25 16:42:52 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/25 16:42:52 | 
+INFO   | jvm 1    | 2017/08/25 16:42:53 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/25 16:42:53 |   Heap sizes: current=125952k  free=117217k  max=932352k
+INFO   | jvm 1    | 2017/08/25 16:42:53 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=5cGFgS0O08Gnx0id -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=31788 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/25 16:42:53 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/25 16:42:53 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/25 16:42:53 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/25 16:42:53 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/25 16:42:53 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/25 16:42:53 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/25 16:43:00 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/25 16:43:00 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@6c159bff: startup date [Fri Aug 25 16:43:00 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/25 16:43:08 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/25 16:43:18 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/25 16:43:18 |  INFO | Recovering from the journal @1:11641629
+INFO   | jvm 1    | 2017/08/25 16:43:18 |  INFO | Recovery replayed 644 operations from the journal in 0.17 seconds.
+INFO   | jvm 1    | 2017/08/25 16:43:18 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/25 16:43:19 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-62606-1503650599282-0:1) is starting
+INFO   | jvm 1    | 2017/08/25 16:43:20 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/25 16:43:20 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/25 16:43:20 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/25 16:43:20 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/25 16:43:20 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/25 16:43:20 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/25 16:43:20 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/25 16:43:20 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/25 16:43:21 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@4b55bdd9{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/25 16:43:21 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/25 16:43:21 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/25 16:43:21 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-62606-1503650599282-0:1) started
+INFO   | jvm 1    | 2017/08/25 16:43:21 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/25 16:43:26 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/25 16:43:28 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/25 16:43:28 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/25 16:43:28 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/25 16:43:31 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/25 16:43:32 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/25 17:20:49 |  WARN | Transport Connection to: tcp://127.0.0.1:63012 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/25 18:41:52 |  WARN | Transport Connection to: tcp://127.0.0.1:2239 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/25 19:09:26 |  WARN | Transport Connection to: tcp://127.0.0.1:2739 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/25 19:27:01 |  WARN | Transport Connection to: tcp://127.0.0.1:4552 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2017/08/29 19:19:54 | --> Wrapper Started as Console
+STATUS | wrapper  | 2017/08/29 19:19:54 | Launching a JVM...
+INFO   | jvm 1    | 2017/08/29 19:19:55 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2017/08/29 19:19:55 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2017/08/29 19:19:55 | 
+INFO   | jvm 1    | 2017/08/29 19:19:56 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2017/08/29 19:19:56 |   Heap sizes: current=125952k  free=117298k  max=932352k
+INFO   | jvm 1    | 2017/08/29 19:19:56 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=xVFvXBFHqSSKCH8Z -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=14724 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2017/08/29 19:19:56 | Extensions classpath:
+INFO   | jvm 1    | 2017/08/29 19:19:56 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2017/08/29 19:19:56 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2017/08/29 19:19:56 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2017/08/29 19:19:56 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2017/08/29 19:19:56 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2017/08/29 19:19:57 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2017/08/29 19:19:58 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@4163d4e7: startup date [Tue Aug 29 19:19:58 CST 2017]; root of context hierarchy
+INFO   | jvm 1    | 2017/08/29 19:20:00 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2017/08/29 19:20:01 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2017/08/29 19:20:01 |  INFO | Recovering from the journal @1:11805391
+INFO   | jvm 1    | 2017/08/29 19:20:01 |  INFO | Recovery replayed 2032 operations from the journal in 0.071 seconds.
+INFO   | jvm 1    | 2017/08/29 19:20:01 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-35249-1504005601940-0:1) is starting
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@b9e0a29{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  INFO | Connector ws started
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-35249-1504005601940-0:1) started
+INFO   | jvm 1    | 2017/08/29 19:20:02 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2017/08/29 19:20:03 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/29 19:20:03 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2017/08/29 19:20:03 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2017/08/29 19:20:04 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2017/08/29 19:20:04 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2017/08/29 19:20:05 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml
+INFO   | jvm 1    | 2017/08/29 19:43:08 |  WARN | Transport Connection to: tcp://127.0.0.1:36725 failed: java.net.SocketException: Connection reset
+INFO   | jvm 1    | 2017/08/29 20:07:07 |  WARN | Transport Connection to: tcp://127.0.0.1:38898 failed: java.net.SocketException: Connection reset
+STATUS | wrapper  | 2018/03/02 22:40:52 | --> Wrapper Started as Console
+STATUS | wrapper  | 2018/03/02 22:40:52 | Launching a JVM...
+INFO   | jvm 1    | 2018/03/02 22:40:53 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2018/03/02 22:40:53 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2018/03/02 22:40:53 | 
+INFO   | jvm 1    | 2018/03/02 22:40:54 | Java Runtime: Oracle Corporation 1.8.0_77 E:\java\jre
+INFO   | jvm 1    | 2018/03/02 22:40:54 |   Heap sizes: current=251392k  free=236973k  max=932352k
+INFO   | jvm 1    | 2018/03/02 22:40:54 |     JVM args: -Dactivemq.home=../.. -Dactivemq.base=../.. -Djavax.net.ssl.keyStorePassword=password -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.keyStore=../../conf/broker.ks -Djavax.net.ssl.trustStore=../../conf/broker.ts -Dcom.sun.management.jmxremote -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dactivemq.conf=../../conf -Dactivemq.data=../../data -Djava.security.auth.login.config=../../conf/login.config -Xmx1024m -Djava.library.path=../../bin/win64 -Dwrapper.key=wElQKXS77RRsKx74 -Dwrapper.port=32000 -Dwrapper.jvm.port.min=31000 -Dwrapper.jvm.port.max=31999 -Dwrapper.pid=44700 -Dwrapper.version=3.2.3 -Dwrapper.native_library=wrapper -Dwrapper.cpu.timeout=10 -Dwrapper.jvmid=1
+INFO   | jvm 1    | 2018/03/02 22:40:54 | Extensions classpath:
+INFO   | jvm 1    | 2018/03/02 22:40:54 |   [..\..\lib,..\..\lib\camel,..\..\lib\optional,..\..\lib\web,..\..\lib\extra]
+INFO   | jvm 1    | 2018/03/02 22:40:54 | ACTIVEMQ_HOME: ..\..
+INFO   | jvm 1    | 2018/03/02 22:40:54 | ACTIVEMQ_BASE: ..\..
+INFO   | jvm 1    | 2018/03/02 22:40:54 | ACTIVEMQ_CONF: ..\..\conf
+INFO   | jvm 1    | 2018/03/02 22:40:54 | ACTIVEMQ_DATA: ..\..\data
+INFO   | jvm 1    | 2018/03/02 22:40:55 | Loading message broker from: xbean:activemq.xml
+INFO   | jvm 1    | 2018/03/02 22:40:55 |  INFO | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@81b082d: startup date [Fri Mar 02 22:40:55 CST 2018]; root of context hierarchy
+INFO   | jvm 1    | 2018/03/02 22:40:57 |  INFO | Using Persistence Adapter: KahaDBPersistenceAdapter[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\kahadb]
+INFO   | jvm 1    | 2018/03/02 22:40:58 |  INFO | KahaDB is version 6
+INFO   | jvm 1    | 2018/03/02 22:40:58 |  INFO | Recovering from the journal @1:12318929
+INFO   | jvm 1    | 2018/03/02 22:40:58 |  INFO | Recovery replayed 1176 operations from the journal in 0.081 seconds.
+INFO   | jvm 1    | 2018/03/02 22:40:58 |  INFO | PListStore:[F:\java\Creadit2\credit\tools\apache-activemq-5.13.2\bin\win64\..\..\data\localhost\tmp_storage] started
+INFO   | jvm 1    | 2018/03/02 22:40:58 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-43532-1520001658813-0:1) is starting
+INFO   | jvm 1    | 2018/03/02 22:40:59 |  INFO | Listening for connections at: tcp://USER-20160326YP:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2018/03/02 22:40:59 |  INFO | Connector openwire started
+INFO   | jvm 1    | 2018/03/02 22:40:59 |  INFO | Listening for connections at: amqp://USER-20160326YP:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2018/03/02 22:40:59 |  INFO | Connector amqp started
+INFO   | jvm 1    | 2018/03/02 22:40:59 |  INFO | Listening for connections at: stomp://USER-20160326YP:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2018/03/02 22:40:59 |  INFO | Connector stomp started
+INFO   | jvm 1    | 2018/03/02 22:40:59 |  INFO | Listening for connections at: mqtt://USER-20160326YP:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2018/03/02 22:40:59 |  INFO | Connector mqtt started
+INFO   | jvm 1    | 2018/03/02 22:40:59 |  WARN | ServletContext@o.e.j.s.ServletContextHandler@2d71edf8{/,null,STARTING} has uncovered http methods for path: /
+INFO   | jvm 1    | 2018/03/02 22:41:00 |  INFO | Listening for connections at ws://USER-20160326YP:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+INFO   | jvm 1    | 2018/03/02 22:41:00 |  INFO | Connector ws started
+INFO   | jvm 1    | 2018/03/02 22:41:00 |  INFO | Apache ActiveMQ 5.13.2 (localhost, ID:USER-20160326YP-43532-1520001658813-0:1) started
+INFO   | jvm 1    | 2018/03/02 22:41:00 |  INFO | For help or more information please see: http://activemq.apache.org
+INFO   | jvm 1    | 2018/03/02 22:41:00 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2018/03/02 22:41:01 |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+INFO   | jvm 1    | 2018/03/02 22:41:01 |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+INFO   | jvm 1    | 2018/03/02 22:41:01 |  INFO | Initializing Spring FrameworkServlet 'dispatcher'
+INFO   | jvm 1    | 2018/03/02 22:41:01 |  INFO | No Spring WebApplicationInitializer types detected on classpath
+INFO   | jvm 1    | 2018/03/02 22:41:02 |  INFO | jolokia-agent: Using policy access restrictor classpath:/jolokia-access.xml

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>活动报名信息</title>
+		<link rel="stylesheet" href="css/weui.min.css">
+		<link rel="stylesheet" href="css/jquery-weui.min.css">
+		<link rel="stylesheet" href="css/demos.css" />
+		<style>
+			.weui-cells {
+				font-size: 25px;
+			}
+		</style>
+		<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+	</head>
+
+	<body ontouchstart style="background-color:#F3F3F3;">
+		<div id="list" class="weui-cells weui-cells_access" style="margin-top: 60px;"></div>
+		<div class="weui-loadmore" id="div_loading">
+			<i class="weui-loading"></i>
+			<span class="weui-loadmore__tips">正在加载</span>
+		</div>
+		<input type="hidden" id="offset" value="0" />
+		<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-weui.min.js"></script>
+		<script src="js/fastclick.js"></script>
+<<<<<<< Updated upstream
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+		<script type="text/javascript" src="js/share.js"></script>
+=======
+		<script>
+			// $(function() {
+			// 	FastClick.attach(document.body);
+			// });
+		</script>
+>>>>>>> Stashed changes
+		<script>
+			function enrollinfo(actId, status) {
+				window.location.href = "/student/ids/stuinfo?type=6&actid=" + actId + "&status=" + status;
+			}
+		</script>
+		<script>
+			$(function() {
+				FastClick.attach(document.body);
+				$("#div_loading").show();
+				$(document.body).infinite();
+				first_load();
+				$("#div_loading").hide();
+			});
+
+			function first_load() {
+				var stuid = GetQueryString("id");
+				$(function() {
+					$.ajax({
+						type: "post",
+						url: "/student/enrollacts",
+						data: {
+							id: stuid,
+							offset: 0,
+							limit: 18
+						},
+						async: true,
+						success: function(result) {
+							$('#offset').attr('value', parseInt(result.data.total));
+							$.each(result.data.pActEnrolBeans, function(index, pActEnrolBean) {
+								var ftText;
+								var visible = true;
+								switch(pActEnrolBean.status) {
+									case '00':
+										ftText = "可重新报名";
+										break;
+									case '01':
+										ftText = "报名已结束";
+										visible = false;
+										break;
+									case '02':
+										ftText = "活动已结束";
+										visible = false;
+										break;
+									case '10':
+										ftText = "可取消";
+										break;
+									case '11':
+										ftText = "报名已结束";
+										break;
+									case '12':
+										ftText = "活动已结束";
+										break;
+								}
+								if(visible == true) {
+									$(".weui-cells").append("<a class='weui-cell weui-cell_access' href='javascript:;' onclick='enrollinfo(\"" + pActEnrolBean.actId + "\"," + pActEnrolBean.status + ")'>" +
+										'<div class="weui-cell__bd">' +
+										'<p>' + pActEnrolBean.actName  + '</p>' +
+										'</div>' +
+										'<div class="weui-cell__ft">'+ftText+'</div>' +
+										'</a>'
+									);
+								}
+							});
+						},
+					});
+				});
+			}
+		</script>
+
+		<script>
+			var stuid = GetQueryString("id");
+			var loading = false;
+			$(document.body).infinite().on("infinite", function() {
+				if(loading) return;
+				loading = true;
+				$("#div_loading").show();
+				setTimeout(function() {
+					$("#div_loading").show();
+					$.ajax({
+						type: "post",
+						url: "/student/enrollacts",
+						data: {
+							id: stuid,
+							offset: $('#offset').val(),
+							limit: parseInt($('#offset').val()) + 5
+						},
+						async: true,
+						success: function(result) {
+							if(result.data.total == 0) {
+								loading = false;
+							}
+							var offset = parseInt($('#offset').val());
+							$('#offset').attr('value', parseInt(result.data.total) + offset);
+							$.each(result.data.pActEnrolBeans, function(index, pActEnrolBean) {
+								var ftText;
+								var visible = true;
+								switch(pActEnrolBean.status) {
+									case '00':
+										ftText = "可重新报名";
+										break;
+									case '01':
+										ftText = "报名已结束";
+										visible = false;
+										break;
+									case '02':
+										ftText = "活动已结束";
+										visible = false;
+										break;
+									case '03':
+										ftText = "活动人数已满";
+										visible = false;
+										break;
+									case '10':
+										ftText = "可取消";
+										break;
+									case '11':
+										ftText = "报名已结束";
+										break;
+									case '12':
+										ftText = "活动已结束";
+										break;
+								}
+								if(visible == true) {
+									$(".weui-cells").append("<a class='weui-cell weui-cell_access' href='javascript:;' onclick='enrollinfo(\"" + pActEnrolBean.actId + "\"," + pActEnrolBean.status + ")'>" +
+										'<div class="weui-cell__bd">' +
+										'<p>' + pActEnrolBean.actName  + '</p>' +
+										'</div>' +
+										'<div class="weui-cell__ft">'+ftText+'</div>' +
+										'</a>'
+									);
+								}
+							});
+							$('#div_loading').hide();
+						},
+					});
+				}, 1500);
+			});
+
+			function GetQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+		</script>
+	</body>
+
+</html>

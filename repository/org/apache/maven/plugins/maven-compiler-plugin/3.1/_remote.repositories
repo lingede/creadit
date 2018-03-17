@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Fri May 05 09:22:05 CST 2017
+maven-compiler-plugin-3.1.jar>alimaven=
+maven-compiler-plugin-3.1.pom>alimaven=
+maven-compiler-plugin-3.1.pom>publicMirror=
+maven-compiler-plugin-3.1.jar>publicMirror=

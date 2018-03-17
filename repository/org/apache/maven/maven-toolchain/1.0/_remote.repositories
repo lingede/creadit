@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Fri May 05 09:22:07 CST 2017
+maven-toolchain-1.0.jar>publicMirror=
+maven-toolchain-1.0.jar>alimaven=
+maven-toolchain-1.0.pom>alimaven=
+maven-toolchain-1.0.pom>publicMirror=

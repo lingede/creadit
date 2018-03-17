@@ -1,0 +1,97 @@
+<!-- toaster directive -->
+<toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+<!-- / toaster directive -->
+
+<!-- 导航条 -->
+<div class="bg-white bread-crumb">
+    <ul class="breadcrumb b-a m-b-n-xs lter b-b wrapper-md">
+        <li><a ui-sref="main"><i class="fa fa-home"></i> 首页</a></li>
+        <li><a ui-sref="main.platform.stu.list">学生管理</a></li>
+        <li class="active" ng-bind="title"></li>
+    </ul>
+</div>
+
+<!-- 内容区域 -->
+<div class="wrapper-md content">
+    <div class="panel panel-default">
+        <!-- 头部 -->
+        <div class="panel-heading font-bold">{{title}}
+        <a class="btn btn-sm btn-icon btn-rounded btn-default pull-right m-t-n-xs" ui-sref="main.platform.stu.list"><i class="text-md fa fa-times text-muted"></i></a>
+        </div>
+        <!--表单-->
+            <div class="panel-body">
+                <form class="form-horizontal"  name="user_form">
+                    <!--学生姓名-->
+                    <div class="form-group">
+                        <label class="col-lg-2 col-sm-3 control-label" for="stuName">学生姓名</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="stuName" id="stuName" placeholder="请输入学生姓名..." ng-model="record.stuName">
+                            <span class="help-block m-b-none"></span>
+                            </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!--学生学号 -->
+                    <div class="form-group">
+                        <label class="col-lg-2 col-sm-3 control-label" for="id">
+                        <span class="text-danger wrapper-sm">*</span>学生学号</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="id" id="id" placeholder="请输入学生学号..." ng-model="record.id">
+                            <span class="help-block m-b-none"></span>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                   <!--学院-->
+                    <div class="form-group">
+                        <label class="col-lg-2 col-sm-3 control-label" for="deptId">学院</label>
+                        <div class="col-sm-6">
+							<div class="selects">
+								<select class="form-control" name="deptId" id="deptId"
+									ng-model="record.deptId"
+									ng-options="pBasicDeptBean.deptId as pBasicDeptBean.deptName  for pBasicDeptBean in pBasicDeptBeans">
+									</select>
+							</div>
+						</div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!--学生类型-->
+                    <div class="form-group">
+                        <label class="col-lg-2 col-sm-3 control-label" for="stuType">学生类型</label>
+                        <div class="col-sm-6">
+	                        <div class="selects">
+	                                <select class="form-control" name="stuType" id="stuType" ng-model="record.stuType" 
+	                                		ng-options="item.value as item.stuType for item in [{stuType:'--请选择学生类型--',value:undefined},{stuType:'本科生',value:1},{stuType:'硕士生',value:2},{stuType:'博士生',value:3}]">
+									</select>
+	                        </div>
+                            <span class="help-block m-b-none"></span>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!--专业-->
+                    <div class="form-group">
+                        <label class="col-lg-2 col-sm-3 control-label" for="stuMajor">专业</label>
+                        <div class="col-sm-6">
+							<input type="text" class="form-control" name="stuMajor" id="stuMajor" placeholder="请输入学生专业..." ng-model="record.stuMajor">
+                            <span class="help-block m-b-none"></span>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!--联系方式-->
+                    <div class="form-group">
+                        <label class="col-lg-2 col-sm-3 control-label" for="stuPhone">联系方式</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="stuPhone" id="stuPhone" placeholder="请输入学生的联系方式..." ng-model="record.stuPhone">
+                            <span class="help-block m-b-none"></span>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div> 
+                    <!--btn-->
+                    <div class="form-group">
+                        <div class="col-sm-6 col-sm-offset-2">
+                            <button type="reset" class="btn btn-default w-xs">重置</button>
+                            <button type="submit" class="btn btn-info w-xs m-l-xl" ng-disabled="isDisabled">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>
